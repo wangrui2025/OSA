@@ -40,6 +40,7 @@ const homepage = defineCollection({
     resourcesTitle: z.string(),
     footerTemplate: z.string(),
     footerLicense: z.string(),
+    bibtexEntry: z.string(),
   }),
 });
 

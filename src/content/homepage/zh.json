@@ -34,5 +34,6 @@
   "fig4Caption": "在 CAMUS 和 EchoNet-Dynamic 数据集上的定性分割结果。OSA 在不同成像质量、声影和模糊边界等真实临床挑战下始终保持更准确的轮廓。",
   "resourcesTitle": "相关资源",
   "footerTemplate": "OSA 项目主页 | 使用 Astro 构建",
-  "footerLicense": "代码基于 MIT 许可证发布"
+  "footerLicense": "代码基于 MIT 许可证发布",
+  "bibtexEntry": "@misc{wang2026osaechocardiographyvideosegmentation,\n  title={{OSA}: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement},\n  author={Rui Wang and Huisi Wu and Jing Qin},\n  year={2026},\n  eprint={2603.26188},\n  archivePrefix={arXiv},\n  primaryClass={cs.CV},\n  url={https://arxiv.org/abs/2603.26188},\n}"
 }
