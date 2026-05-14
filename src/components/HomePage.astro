@@ -169,7 +169,7 @@ const schema = getScholarlyArticleSchema({
           loading="lazy"
         />
         <p class="figure-caption">
-          <strong>Table 1.</strong> {lang === 'zh' ? '与现有最先进方法的定量比较。' : 'Quantitative comparison with state-of-the-art methods.'}
+          <strong>Table 1.</strong> {t(lang, 'table1Caption')}
         </p>
       </div>
 
@@ -183,7 +183,7 @@ const schema = getScholarlyArticleSchema({
           loading="lazy"
         />
         <p class="figure-caption">
-          <strong>Table 2.</strong> {lang === 'zh' ? '消融实验结果。' : 'Ablation study results.'}
+          <strong>Table 2.</strong> {t(lang, 'table2Caption')}
         </p>
       </div>
     </div>
@@ -198,9 +198,7 @@ const schema = getScholarlyArticleSchema({
         loading="lazy"
       />
       <p class="figure-caption">
-        <strong>Figure 4.</strong> {lang === 'zh'
-          ? '在 CAMUS 和 EchoNet-Dynamic 数据集上的定性分割结果。OSA 在不同成像质量、声影和模糊边界等真实临床挑战下始终保持更准确的轮廓。'
-          : 'Qualitative segmentation results on CAMUS and EchoNet-Dynamic. OSA consistently yields more accurate contours across varying imaging qualities, acoustic shadowing, and ambiguous boundaries.'}
+        <strong>Figure 4.</strong> {t(lang, 'fig4Caption')}
       </p>
     </div>
   </Section>

@@ -29,6 +29,9 @@
   "bibtexTitle": "BibTeX",
   "copyLabel": "Copy",
   "copiedLabel": "Copied!",
+  "table1Caption": "Quantitative comparison with state-of-the-art methods.",
+  "table2Caption": "Ablation study results.",
+  "fig4Caption": "Qualitative segmentation results on CAMUS and EchoNet-Dynamic. OSA consistently yields more accurate contours across varying imaging qualities, acoustic shadowing, and ambiguous boundaries.",
   "resourcesTitle": "Resources",
   "footerTemplate": "OSA Project Page | Built with Astro",
   "footerLicense": "Code released under MIT License"
