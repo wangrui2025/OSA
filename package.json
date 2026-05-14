@@ -9,8 +9,6 @@
     "check": "astro check"
   },
   "dependencies": {
-    "@fontsource/inter": "^5.2.5",
-    "@fontsource/plus-jakarta-sans": "^5.2.5",
     "@iconify-json/lucide": "^1.2.0",
     "@iconify-json/simple-icons": "^1.2.0",
     "astro": "^6.1.8",
