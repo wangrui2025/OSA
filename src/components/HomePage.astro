@@ -5,6 +5,14 @@ import ActionButton from './ActionButton.astro';
 import CopyButton from './CopyButton.astro';
 import { getScholarlyArticleSchema } from '../utils/structuredData';
 import { t } from '../i18n';
+import { Image } from 'astro:assets';
+import figOverview from '../assets/paper/fig/Met/fig_overview.png';
+import figChallenge from '../assets/paper/fig/challenge/image.png';
+import figOsu from '../assets/paper/fig/osu/fig_osu.png';
+import figApfe from '../assets/paper/fig/apfe/fig_apfe.png';
+import tabCap from '../assets/paper/tab/tab_cap.png';
+import tabAbl from '../assets/paper/tab/tab_abl.png';
+import figExp from '../assets/paper/fig/Exp/image.png';
 
 interface Props {
   lang: 'en' | 'zh';
@@ -69,8 +77,8 @@ const schema = getScholarlyArticleSchema({
   <!-- Architecture Overview -->
   <Section>
     <div class="figure-card">
-      <img
-        src={`${import.meta.env.BASE_URL}/paper/fig/Met/fig_overview.png`}
+      <Image
+        src={figOverview}
         alt="OSA Architecture Overview"
         width={1200}
         height={600}
@@ -101,8 +109,8 @@ const schema = getScholarlyArticleSchema({
     <p class="text-text-muted dark:text-text-muted-dark mb-8">{t(lang, 'motivationDesc')}</p>
 
     <div class="figure-card">
-      <img
-        src={`${import.meta.env.BASE_URL}/paper/fig/challenge/image.png`}
+      <Image
+        src={figChallenge}
         alt="Challenges in echocardiography segmentation"
         width={1200}
         height={400}
@@ -123,8 +131,8 @@ const schema = getScholarlyArticleSchema({
       <h3 class="text-xl font-semibold mb-4 text-text dark:text-text-dark">{t(lang, 'methodOsuTitle')}</h3>
       <p class="text-text-muted dark:text-text-muted-dark mb-6">{t(lang, 'methodOsuDesc')}</p>
       <div class="figure-card">
-        <img
-          src={`${import.meta.env.BASE_URL}/paper/fig/osu/fig_osu.png`}
+        <Image
+          src={figOsu}
           alt="Orthogonalized State Update mechanism"
           width={1200}
           height={500}
@@ -138,8 +146,8 @@ const schema = getScholarlyArticleSchema({
       <h3 class="text-xl font-semibold mb-4 text-text dark:text-text-dark">{t(lang, 'methodApfeTitle')}</h3>
       <p class="text-text-muted dark:text-text-muted-dark mb-6">{t(lang, 'methodApfeDesc')}</p>
       <div class="figure-card">
-        <img
-          src={`${import.meta.env.BASE_URL}/paper/fig/apfe/fig_apfe.png`}
+        <Image
+          src={figApfe}
           alt="Anatomical Prior-aware Feature Enhancement module"
           width={1200}
           height={500}
@@ -161,8 +169,8 @@ const schema = getScholarlyArticleSchema({
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
       <!-- Quantitative Results Table -->
       <div class="figure-card">
-        <img
-          src={`${import.meta.env.BASE_URL}/paper/tab/tab_cap.png`}
+        <Image
+          src={tabCap}
           alt="Comparison with state-of-the-art methods"
           width={600}
           height={400}
@@ -175,8 +183,8 @@ const schema = getScholarlyArticleSchema({
 
       <!-- Ablation Study -->
       <div class="figure-card">
-        <img
-          src={`${import.meta.env.BASE_URL}/paper/tab/tab_abl.png`}
+        <Image
+          src={tabAbl}
           alt="Ablation study results"
           width={600}
           height={400}
@@ -190,8 +198,8 @@ const schema = getScholarlyArticleSchema({
 
     <!-- Qualitative Results -->
     <div class="figure-card">
-      <img
-        src={`${import.meta.env.BASE_URL}/paper/fig/Exp/image.png`}
+      <Image
+        src={figExp}
         alt="Qualitative segmentation results"
         width={1200}
         height={500}
