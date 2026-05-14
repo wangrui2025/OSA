@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { t } from '../i18n';
+
+const lang = (Astro.currentLocale ?? 'en') as 'en' | 'zh';
+---
+
+<Layout title="404 | OSA" lang={lang} showFooter={false}>
+  <div class="min-h-[60vh] flex flex-col items-center justify-center px-4">
+    <h1 class="text-6xl font-bold text-primary mb-4">404</h1>
+    <p class="text-lg text-text-muted dark:text-text-muted-dark mb-8">
+      {lang === 'zh' ? '页面未找到' : 'Page not found'}
+    </p>
+    <a
+      href={`${import.meta.env.BASE_URL}/${lang}/`}
+      class="action-btn action-btn-primary"
+    >
+      {lang === 'zh' ? '返回首页' : 'Back to home'}
+    </a>
+  </div>
+</Layout>

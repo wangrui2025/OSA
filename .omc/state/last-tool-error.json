@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"git config --get remote.origin.url\",\"description\":\"Check git origin URL\"}",
+  "error": "Exit code 1",
+  "timestamp": "2026-05-14T07:39:47.056Z",
+  "retry_count": 1
+}

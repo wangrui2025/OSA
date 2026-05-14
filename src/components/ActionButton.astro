@@ -1,0 +1,22 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  href: string;
+  icon?: string;
+  variant?: 'default' | 'primary';
+  target?: string;
+}
+
+const { href, icon, variant = 'default', target } = Astro.props;
+---
+
+<a
+  href={href}
+  target={target}
+  rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+  class={`action-btn ${variant === 'primary' ? 'action-btn-primary' : ''}`}
+>
+  {icon && <Icon name={icon} class="w-4 h-4" />}
+  <slot />
+</a>

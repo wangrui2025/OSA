@@ -1,0 +1,240 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Section from './Section.astro';
+import ActionButton from './ActionButton.astro';
+import CopyButton from './CopyButton.astro';
+import { getScholarlyArticleSchema } from '../utils/structuredData';
+import { t } from '../i18n';
+
+interface Props {
+  lang: 'en' | 'zh';
+}
+
+const { lang } = Astro.props;
+
+const schema = getScholarlyArticleSchema({
+  title: t(lang, 'publicationTitle'),
+  authors: ['Rui Wang', 'Yimu Sun', 'Jingxing Guo', 'Huisi Wu', 'Jing Qin'],
+  description: t(lang, 'description'),
+  url: new URL(Astro.url.pathname, Astro.site).href,
+  image: new URL(`${import.meta.env.BASE_URL}/paper/fig/Met/fig_overview.png`, Astro.site).href,
+  datePublished: '2026-06-01',
+  venue: 'CVPR 2026',
+  pdfUrl: 'https://arxiv.org/abs/2603.26188',
+  codeUrl: 'https://github.com/wangrui2025/OSA',
+});
+---
+
+<Layout title={t(lang, 'title')} description={t(lang, 'description')} lang={lang} structuredData={schema}>
+  <!-- Hero -->
+  <section class="relative pt-12 pb-16 md:pt-16 md:pb-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <!-- Venue Badge -->
+        <div class="mb-6">
+          <span class="venue-badge">{t(lang, 'venue')}</span>
+        </div>
+
+        <h1 class="publication-title">
+          {t(lang, 'publicationTitle')}
+        </h1>
+
+        <p class="text-lg mt-4 text-text-muted dark:text-text-muted-dark">
+          {t(lang, 'venueFull')}
+        </p>
+
+        <div class="text-lg mt-6 font-medium">
+          <span class="mx-1">Rui Wang<sup>1</sup>,</span>
+          <span class="mx-1">Yimu Sun<sup>1</sup>,</span>
+          <span class="mx-1">Jingxing Guo<sup>1</sup>,</span>
+          <span class="mx-1">Huisi Wu<sup>1,*</sup>,</span>
+          <span class="mx-1">Jing Qin<sup>2</sup></span>
+        </div>
+
+        <div class="text-sm mt-3 text-text-muted dark:text-text-muted-dark">
+          <div><sup>1</sup>{t(lang, 'affiliation1')}</div>
+          <div><sup>2</sup>{t(lang, 'affiliation2')}</div>
+          <div class="mt-2 text-xs">{t(lang, 'email')}</div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-3 mt-8">
+          <ActionButton href="https://arxiv.org/abs/2603.26188" icon="lucide:file-text" target="_blank">
+            {t(lang, 'arxivLabel')}
+          </ActionButton>
+          <ActionButton href="https://github.com/wangrui2025/OSA" icon="lucide:github" target="_blank">
+            {t(lang, 'codeLabel')}
+          </ActionButton>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Overview -->
+  <Section>
+    <div class="figure-card">
+      <img
+        src={`${import.meta.env.BASE_URL}/paper/fig/Met/fig_overview.png`}
+        alt="OSA Architecture Overview"
+        width={1200}
+        height={600}
+        loading="eager"
+      />
+    </div>
+    <p class="figure-caption mt-2">
+      <strong>Figure 1.</strong> {t(lang, 'fig1Caption')}
+    </p>
+  </Section>
+
+  <!-- Abstract -->
+  <Section>
+    <div class="abstract-box">
+      <h2 class="section-heading text-center">{t(lang, 'abstractTitle')}</h2>
+      <div class="prose dark:prose-invert max-w-none space-y-4">
+        <p>{t(lang, 'abstractP1')}</p>
+        <p>{t(lang, 'abstractP2')}</p>
+        {t(lang, 'abstractP3') && <p>{t(lang, 'abstractP3')}</p>}
+        {t(lang, 'abstractP4') && <p>{t(lang, 'abstractP4')}</p>}
+      </div>
+    </div>
+  </Section>
+
+  <!-- Motivation / Challenges -->
+  <Section>
+    <h2 class="section-heading">{t(lang, 'motivationTitle')}</h2>
+    <p class="text-text-muted dark:text-text-muted-dark mb-8">{t(lang, 'motivationDesc')}</p>
+
+    <div class="figure-card">
+      <img
+        src={`${import.meta.env.BASE_URL}/paper/fig/challenge/image.png`}
+        alt="Challenges in echocardiography segmentation"
+        width={1200}
+        height={400}
+        loading="lazy"
+      />
+    </div>
+    <p class="figure-caption mt-2">
+      <strong>Figure 2.</strong> {t(lang, 'fig2Caption')}
+    </p>
+  </Section>
+
+  <!-- Method -->
+  <Section>
+    <h2 class="section-heading">{t(lang, 'methodTitle')}</h2>
+
+    <!-- OSU -->
+    <div class="mb-12">
+      <h3 class="text-xl font-semibold mb-4 text-text dark:text-text-dark">{t(lang, 'methodOsuTitle')}</h3>
+      <p class="text-text-muted dark:text-text-muted-dark mb-6">{t(lang, 'methodOsuDesc')}</p>
+      <div class="figure-card">
+        <img
+          src={`${import.meta.env.BASE_URL}/paper/fig/osu/fig_osu.png`}
+          alt="Orthogonalized State Update mechanism"
+          width={1200}
+          height={500}
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <!-- APFE -->
+    <div class="mb-8">
+      <h3 class="text-xl font-semibold mb-4 text-text dark:text-text-dark">{t(lang, 'methodApfeTitle')}</h3>
+      <p class="text-text-muted dark:text-text-muted-dark mb-6">{t(lang, 'methodApfeDesc')}</p>
+      <div class="figure-card">
+        <img
+          src={`${import.meta.env.BASE_URL}/paper/fig/apfe/fig_apfe.png`}
+          alt="Anatomical Prior-aware Feature Enhancement module"
+          width={1200}
+          height={500}
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <p class="figure-caption mt-2">
+      <strong>Figure 3.</strong> {t(lang, 'fig3Caption')}
+    </p>
+  </Section>
+
+  <!-- Results -->
+  <Section>
+    <h2 class="section-heading">{t(lang, 'resultsTitle')}</h2>
+    <p class="text-text-muted dark:text-text-muted-dark mb-8">{t(lang, 'resultsDesc')}</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <!-- Quantitative Results Table -->
+      <div class="figure-card">
+        <img
+          src={`${import.meta.env.BASE_URL}/paper/tab/tab_cap.png`}
+          alt="Comparison with state-of-the-art methods"
+          width={600}
+          height={400}
+          loading="lazy"
+        />
+        <p class="figure-caption">
+          <strong>Table 1.</strong> {lang === 'zh' ? '与现有最先进方法的定量比较。' : 'Quantitative comparison with state-of-the-art methods.'}
+        </p>
+      </div>
+
+      <!-- Ablation Study -->
+      <div class="figure-card">
+        <img
+          src={`${import.meta.env.BASE_URL}/paper/tab/tab_abl.png`}
+          alt="Ablation study results"
+          width={600}
+          height={400}
+          loading="lazy"
+        />
+        <p class="figure-caption">
+          <strong>Table 2.</strong> {lang === 'zh' ? '消融实验结果。' : 'Ablation study results.'}
+        </p>
+      </div>
+    </div>
+
+    <!-- Qualitative Results -->
+    <div class="figure-card">
+      <img
+        src={`${import.meta.env.BASE_URL}/paper/fig/Exp/image.png`}
+        alt="Qualitative segmentation results"
+        width={1200}
+        height={500}
+        loading="lazy"
+      />
+      <p class="figure-caption">
+        <strong>Figure 4.</strong> {lang === 'zh'
+          ? '在 CAMUS 和 EchoNet-Dynamic 数据集上的定性分割结果。OSA 在不同成像质量、声影和模糊边界等真实临床挑战下始终保持更准确的轮廓。'
+          : 'Qualitative segmentation results on CAMUS and EchoNet-Dynamic. OSA consistently yields more accurate contours across varying imaging qualities, acoustic shadowing, and ambiguous boundaries.'}
+      </p>
+    </div>
+  </Section>
+
+  <!-- BibTeX -->
+  <Section id="bibtex">
+    <h2 class="section-heading">{t(lang, 'bibtexTitle')}</h2>
+    <div class="relative">
+      <CopyButton targetId="bibtex-content" label={t(lang, 'copyLabel')} successLabel={t(lang, 'copiedLabel')} />
+      <pre><code id="bibtex-content">@InProceedings&#123;Wang_CVPR25_OSA,
+    author    = &#123;Wang, Rui and Sun, Yimu and Guo, Jingxing and Wu, Huisi and Qin, Jing&#125;,
+    title     = &#123;&#123;OSA&#125;: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement&#125;,
+    booktitle = &#123;Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)&#125;,
+    month     = &#123;June&#125;,
+    year      = &#123;2026&#125;
+&#125;</code></pre>
+    </div>
+  </Section>
+
+  <!-- Resources -->
+  <Section class="pb-8">
+    <div class="text-center">
+      <h2 class="section-heading inline-block">{t(lang, 'resourcesTitle')}</h2>
+      <div class="flex flex-wrap justify-center gap-3 mt-6">
+        <ActionButton href="https://arxiv.org/abs/2603.26188" icon="lucide:file-text" target="_blank">
+          {t(lang, 'arxivLabel')}
+        </ActionButton>
+        <ActionButton href="https://github.com/wangrui2025/OSA" icon="lucide:github" target="_blank">
+          {t(lang, 'codeLabel')}
+        </ActionButton>
+      </div>
+    </div>
+  </Section>
+</Layout>

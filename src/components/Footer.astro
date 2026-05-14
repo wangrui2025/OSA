@@ -1,0 +1,20 @@
+---
+import { t } from '../i18n';
+
+interface Props {
+  lang: 'en' | 'zh';
+}
+
+const { lang } = Astro.props;
+---
+
+<footer class="py-8 border-t border-border dark:border-border-dark">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <p class="text-sm text-text-muted dark:text-text-muted-dark">
+      {t(lang, 'footerTemplate')}
+    </p>
+    <p class="text-xs text-text-muted dark:text-text-muted-dark mt-2 opacity-70">
+      {t(lang, 'footerLicense')}
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,19 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+interface Props {
+  currentLang: 'en' | 'zh';
+}
+
+const { currentLang } = Astro.props;
+const otherLang = currentLang === 'en' ? 'zh' : 'en';
+const otherPath = getRelativeLocaleUrl(otherLang, '/');
+---
+
+<a
+  href={otherPath}
+  class="p-2 rounded-lg text-sm font-medium transition-colors hover:bg-surface-elevated dark:hover:bg-surface-elevated-dark text-text dark:text-text-dark"
+  aria-label={`Switch to ${otherLang === 'zh' ? 'Chinese' : 'English'}`}
+>
+  {otherLang === 'zh' ? '中文' : 'EN'}
+</a>

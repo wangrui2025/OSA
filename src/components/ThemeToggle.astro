@@ -1,0 +1,12 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<button
+  id="theme-toggle"
+  class="p-2 rounded-lg transition-colors hover:bg-surface-elevated dark:hover:bg-surface-elevated-dark"
+  aria-label="Toggle theme"
+>
+  <Icon name="lucide:sun" class="w-5 h-5 hidden dark:block text-text-dark" />
+  <Icon name="lucide:moon" class="w-5 h-5 block dark:hidden text-text" />
+</button>

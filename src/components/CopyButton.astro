@@ -1,0 +1,22 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  targetId: string;
+  label: string;
+  successLabel: string;
+}
+
+const { targetId, label, successLabel } = Astro.props;
+---
+
+<button
+  class="copy-btn"
+  data-copy-target={targetId}
+  data-copy-label={label}
+  data-copy-success={successLabel}
+  aria-label={label}
+>
+  <Icon name="lucide:copy" class="w-3.5 h-3.5 copy-icon" />
+  <span>{label}</span>
+</button>
