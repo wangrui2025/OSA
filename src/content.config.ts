@@ -13,7 +13,7 @@ const homepage = defineCollection({
     authors: z.string(),
     affiliation1: z.string(),
     affiliation2: z.string(),
-    email: z.string(),
+    email: z.string().optional(),
     arxivLabel: z.string(),
     codeLabel: z.string(),
     videoLabel: z.string().optional(),

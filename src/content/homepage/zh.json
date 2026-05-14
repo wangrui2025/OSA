@@ -7,7 +7,6 @@
   "authors": "王锐, 吴惠思, 秦璟",
   "affiliation1": "深圳大学, 中国深圳",
   "affiliation2": "香港理工大学, 中国香港",
-  "email": "wangrui2025@email.szu.edu.cn",
   "arxivLabel": "arXiv",
   "codeLabel": "代码",
   "fig1Caption": "OSA 框架概览。上：无约束线性循环模型在严重散斑噪声下遭受秩崩溃。中：OSU 机制将状态演化约束在 Stiefel 流形上，防止奇异值衰减。下：APFE 模块通过物理驱动分解将解剖结构与散斑噪声解耦，为时序跟踪提供抗噪声的结构线索。",

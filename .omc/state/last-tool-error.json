@@ -1,7 +1,7 @@
 {
   "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"git config --get remote.origin.url\",\"description\":\"Check git origin URL\"}",
-  "error": "Exit code 1",
-  "timestamp": "2026-05-14T07:39:47.056Z",
-  "retry_count": 1
+  "tool_input_preview": "{\"command\":\"git push mykcs main\",\"description\":\"Push OSA to mykcs fork\"}",
+  "error": "Exit code 1\nTo https://github.com/mykcs/OSA.git\n ! [rejected]        main -> main (non-fast-forward)\n错误：无法推送一些引用到 'https://github.com/mykcs/OSA.git'\n提示： 更新被拒绝，因为您当前分支的最新提交落后于其对应的远程分支。\n提示： 如果您希望先与远程变更合并，请在推送前执行 'git pull'。\n提示： 详见 'git push --help' 中的 'Note about fast-forwards' 小节。",
+  "timestamp": "2026-05-14T08:11:45.502Z",
+  "retry_count": 3
 }

@@ -7,7 +7,6 @@
   "authors": "Rui Wang, Huisi Wu, Jing Qin",
   "affiliation1": "Shenzhen University, Shenzhen, China",
   "affiliation2": "The Hong Kong Polytechnic University, Hong Kong SAR",
-  "email": "wangrui2025@email.szu.edu.cn",
   "arxivLabel": "arXiv",
   "codeLabel": "Code",
   "fig1Caption": "Overview of the proposed OSA framework. Top: unconstrained linear recurrent models suffer from rank collapse under severe speckle noise. Middle: our OSU mechanism constrains state evolution on the Stiefel manifold, preventing singular value decay. Bottom: the APFE module decouples anatomical structures from speckle noise via physics-driven decomposition, providing noise-resilient cues for temporal tracking.",
