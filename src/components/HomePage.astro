@@ -14,7 +14,7 @@ const { lang } = Astro.props;
 
 const schema = getScholarlyArticleSchema({
   title: t(lang, 'publicationTitle'),
-  authors: ['Rui Wang', 'Yimu Sun', 'Jingxing Guo', 'Huisi Wu', 'Jing Qin'],
+  authors: ['Rui Wang', 'Huisi Wu', 'Jing Qin'],
   description: t(lang, 'description'),
   url: new URL(Astro.url.pathname, Astro.site).href,
   image: new URL(`${import.meta.env.BASE_URL}/paper/fig/Met/fig_overview.png`, Astro.site).href,
@@ -45,8 +45,6 @@ const schema = getScholarlyArticleSchema({
 
         <div class="text-lg mt-6 font-medium">
           <span class="mx-1">Rui Wang<sup>1</sup>,</span>
-          <span class="mx-1">Yimu Sun<sup>1</sup>,</span>
-          <span class="mx-1">Jingxing Guo<sup>1</sup>,</span>
           <span class="mx-1">Huisi Wu<sup>1,*</sup>,</span>
           <span class="mx-1">Jing Qin<sup>2</sup></span>
         </div>
@@ -214,7 +212,7 @@ const schema = getScholarlyArticleSchema({
     <div class="relative">
       <CopyButton targetId="bibtex-content" label={t(lang, 'copyLabel')} successLabel={t(lang, 'copiedLabel')} />
       <pre><code id="bibtex-content">@InProceedings&#123;Wang_CVPR25_OSA,
-    author    = &#123;Wang, Rui and Sun, Yimu and Guo, Jingxing and Wu, Huisi and Qin, Jing&#125;,
+    author    = &#123;Wang, Rui and Wu, Huisi and Qin, Jing&#125;,
     title     = &#123;&#123;OSA&#125;: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement&#125;,
     booktitle = &#123;Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)&#125;,
     month     = &#123;June&#125;,
