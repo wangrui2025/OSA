@@ -1,0 +1,16 @@
+{
+  "name": "OSA - Orthogonalized State Attention",
+  "short_name": "OSA",
+  "description": "OSA project page for efficient sequence modeling",
+  "start_url": "/osa/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#c96442",
+  "icons": [
+    {
+      "src": "/osa/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
