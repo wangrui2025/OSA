@@ -1,0 +1,40 @@
+document.addEventListener('click', (event: Event) => {
+  const target = event.target as HTMLElement;
+
+  // Theme toggle
+  if (target.closest('#theme-toggle')) {
+    const isDark = document.documentElement.classList.toggle('dark');
+    try {
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    } catch {}
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', isDark ? '#0a0a0a' : '#fafaf9');
+    return;
+  }
+
+  // Copy button
+  const copyBtn = target.closest('button[data-copy-target]');
+  if (copyBtn) {
+    const targetId = copyBtn.getAttribute('data-copy-target');
+    const label = copyBtn.getAttribute('data-copy-label') || 'Copy';
+    const successLabel = copyBtn.getAttribute('data-copy-success') || 'Copied!';
+    const source = document.getElementById(targetId || '');
+    if (!source) return;
+
+    const text = source.innerText;
+    const showSuccess = () => {
+      const icon = copyBtn.querySelector('.copy-icon');
+      const span = copyBtn.querySelector('span');
+      if (icon) icon.setAttribute('name', 'lucide:check');
+      if (span) span.textContent = successLabel;
+      setTimeout(() => {
+        if (icon) icon.setAttribute('name', 'lucide:copy');
+        if (span) span.textContent = label;
+      }, 2000);
+    };
+
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(text).then(showSuccess).catch(() => {});
+    }
+  }
+});

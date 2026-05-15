@@ -1,0 +1,190 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1778809691176,
+  "projectRoot": "/Users/myk/Repo/OSA",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "astro",
+        "version": "6.1.8",
+        "category": "fullstack"
+      }
+    ],
+    "packageManager": "npm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "rm -rf /Users/myk/Repo/OSA/dist /Users/myk/Repo/OSA/node_modules/.vite /Users/myk/Repo/OSA/.astro && npm run build 2>&1 | tail -10",
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": "npm run dev",
+    "scripts": {
+      "dev": "astro dev",
+      "build": "astro check && astro build",
+      "preview": "astro preview",
+      "check": "astro check"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": "ES modules",
+    "testPattern": null,
+    "fileOrganization": "type-based"
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "public",
+      "scripts",
+      "src"
+    ],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "dist": {
+      "path": "dist",
+      "purpose": "Distribution/build output",
+      "fileCount": 6,
+      "lastAccessed": 1778809691168,
+      "keyFiles": [
+        "404.html",
+        "favicon.png",
+        "index.html",
+        "robots.txt",
+        "sitemap-0.xml"
+      ]
+    },
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 2,
+      "lastAccessed": 1778809691168,
+      "keyFiles": [
+        "favicon.png",
+        "robots.txt"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 1,
+      "lastAccessed": 1778809691171,
+      "keyFiles": [
+        "delegation.ts"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 1,
+      "lastAccessed": 1778809691171,
+      "keyFiles": [
+        "content.config.ts"
+      ]
+    },
+    "dist/assets": {
+      "path": "dist/assets",
+      "purpose": "Static assets",
+      "fileCount": 0,
+      "lastAccessed": 1778809691171,
+      "keyFiles": []
+    },
+    "public/assets": {
+      "path": "public/assets",
+      "purpose": "Static assets",
+      "fileCount": 0,
+      "lastAccessed": 1778809691171,
+      "keyFiles": []
+    },
+    "src/assets": {
+      "path": "src/assets",
+      "purpose": "Static assets",
+      "fileCount": 0,
+      "lastAccessed": 1778809691172,
+      "keyFiles": []
+    },
+    "src/components": {
+      "path": "src/components",
+      "purpose": "UI components",
+      "fileCount": 7,
+      "lastAccessed": 1778809691172,
+      "keyFiles": [
+        "ActionButton.astro",
+        "CopyButton.astro",
+        "Footer.astro"
+      ]
+    },
+    "src/pages": {
+      "path": "src/pages",
+      "purpose": "Page components",
+      "fileCount": 2,
+      "lastAccessed": 1778809691172,
+      "keyFiles": [
+        "404.astro",
+        "index.astro"
+      ]
+    },
+    "src/utils": {
+      "path": "src/utils",
+      "purpose": "Utility functions",
+      "fileCount": 1,
+      "lastAccessed": 1778809691172,
+      "keyFiles": [
+        "structuredData.ts"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "src/content/homepage/en.json",
+      "accessCount": 2,
+      "lastAccessed": 1778810607800,
+      "type": "file"
+    },
+    {
+      "path": "src/content/homepage/zh.json",
+      "accessCount": 2,
+      "lastAccessed": 1778810613586,
+      "type": "file"
+    },
+    {
+      "path": "src/components/CopyButton.astro",
+      "accessCount": 1,
+      "lastAccessed": 1778810218617,
+      "type": "file"
+    },
+    {
+      "path": "src/components/ThemeToggle.astro",
+      "accessCount": 1,
+      "lastAccessed": 1778810218685,
+      "type": "file"
+    },
+    {
+      "path": "src/scripts/delegation.ts",
+      "accessCount": 1,
+      "lastAccessed": 1778810324090,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

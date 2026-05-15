@@ -35,5 +35,5 @@
   "resourcesTitle": "Resources",
   "footerTemplate": "OSA Project Page | Built with Astro",
   "footerLicense": "Code released under MIT License",
-  "bibtexEntry": "@misc{wang2026osaechocardiographyvideosegmentation,\n  title={{OSA}: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement},\n  author={Rui Wang and Huisi Wu and Jing Qin},\n  year={2026},\n  eprint={2603.26188},\n  archivePrefix={arXiv},\n  primaryClass={cs.CV},\n  url={https://arxiv.org/abs/2603.26188},\n}"
+  "bibtexEntry": "@misc{wang2026osaechocardiographyvideosegmentation,\n  title={{OSA}}: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement},\n  author={Rui Wang and Huisi Wu and Jing Qin},\n  year={2026},\n  eprint={2603.26188},\n  archivePrefix={arXiv},\n  primaryClass={cs.CV},\n  url={https://arxiv.org/abs/2603.26188},\n}"
 }
