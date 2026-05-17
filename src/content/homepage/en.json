@@ -33,6 +33,8 @@
   "table2Caption": "Ablation study results.",
   "fig4Caption": "Qualitative segmentation results on CAMUS and EchoNet-Dynamic. OSA consistently yields more accurate contours across varying imaging qualities, acoustic shadowing, and ambiguous boundaries.",
   "resourcesTitle": "Resources",
+  "langSwitch": "中文",
+  "langSwitchEn": "EN",
   "footerTemplate": "OSA Project Page | Built with Astro",
   "footerLicense": "Code released under MIT License",
   "notFound": "Page not found",
