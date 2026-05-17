@@ -1178,6 +1178,12 @@
                 margin: 0;
             }
 
+            /* Force background colors to print without requiring browser setting */
+            * {
+                print-color-adjust: exact !important;
+                -webkit-print-color-adjust: exact !important;
+            }
+
             html, body {
                 width: auto;
                 height: auto;
@@ -1189,7 +1195,6 @@
                 width: 100%;
                 height: auto;
                 overflow: visible;
-                background: transparent;
             }
 
             .slide-track {
@@ -1207,7 +1212,6 @@
                 page-break-after: always;
                 break-after: page;
                 overflow: visible;
-                background: #fff;
             }
 
             .slide-wrapper:last-child {
@@ -1221,7 +1225,6 @@
                 max-width: 100%;
                 aspect-ratio: 16/9;
                 overflow: visible;
-                background: #fff;
             }
         }
     </style>
