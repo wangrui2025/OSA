@@ -1209,15 +1209,12 @@
             }
 
             .slide-wrapper {
-                width: 1190pt;
-                height: 842pt;
+                width: 100%;
+                height: auto;
                 page-break-after: always;
                 break-after: page;
                 overflow: hidden;
-                /* Center slide (1440×810pt) vertically in page */
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                padding: 0;
             }
 
             .slide-wrapper:last-child {
@@ -1226,10 +1223,9 @@
             }
 
             .slide {
-                /* 1920×1080px at 96dpi = 20×11.25in = 1440×810pt */
-                width: 1440pt;
-                height: 810pt;
-                overflow: hidden;
+                width: 100%;
+                height: auto;
+                display: block;
             }
         }
     </style>
