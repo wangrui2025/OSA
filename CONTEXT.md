@@ -19,6 +19,12 @@ Single-page academic paper presentation (CVPR 2026). Static Astro site deployed 
 
 - `/osa/` → `src/pages/index.astro` (meta refresh redirect to `/osa/en/`)
 - `/osa/en/` and `/osa/zh/` → `src/pages/[lang]/index.astro` → `HomePage.astro`
+- `/osa/en/poster`, `/osa/zh/poster` → `src/pages/[lang]/poster.astro` (fullscreen iframe)
+- `/osa/en/slides`, `/osa/zh/slides` → `src/pages/[lang]/slides.astro` (fullscreen iframe + zoom/print controls)
+
+## Assets
+
+Publication figures and logos are served from the centralized `mykcs/academic` repository at `wangrui2025.github.io/academic/`. Paths use `/academic/images/...` (see ADR-0002).
 
 ## i18n
 
@@ -27,7 +33,7 @@ Content Collections under `src/content/homepage/` (en.json, zh.json), via `t(lan
 ## Build Verification
 
 ```bash
-npm run build  # must pass, 4 pages built
+npm run build  # must pass, 8 pages built (was 4 before poster/slides migration)
 ```
 
 ## SEO / PWA
