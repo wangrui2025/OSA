@@ -1170,7 +1170,7 @@
         }
 
         /* ===========================================
-           PRINT STYLES — One slide per page
+           PRINT STYLES — One slide per page, full-bleed A3 landscape
            =========================================== */
         @media print {
             @page {
@@ -1184,22 +1184,24 @@
                 -webkit-print-color-adjust: exact !important;
             }
 
+            /* A3 landscape in pt: 1190 × 842pt */
+            /* Slide: 1920×1080px → scale to 1190×669pt (16:9) */
             html, body {
-                width: auto;
+                width: 1190pt;
                 height: auto;
                 overflow: visible;
                 background: #fff;
             }
 
             .slide-viewport {
-                width: 100%;
+                width: 1190pt;
                 height: auto;
                 overflow: visible;
             }
 
             .slide-track {
                 display: block;
-                width: 100%;
+                width: 1190pt;
                 height: auto;
                 padding: 0;
                 gap: 0;
@@ -1207,11 +1209,13 @@
             }
 
             .slide-wrapper {
-                width: 100%;
-                height: auto;
+                width: 1190pt;
+                height: 842pt;
                 page-break-after: always;
                 break-after: page;
-                overflow: visible;
+                overflow: hidden;
+                /* zoom changes layout size, unlike transform: scale */
+                zoom: 62%;
             }
 
             .slide-wrapper:last-child {
@@ -1220,11 +1224,9 @@
             }
 
             .slide {
-                width: 100%;
-                height: auto;
-                max-width: 100%;
-                aspect-ratio: 16/9;
-                overflow: visible;
+                width: 1920px;
+                height: 1080px;
+                overflow: hidden;
             }
         }
     </style>
