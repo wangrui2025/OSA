@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return [{ params: { lang: 'en' } }, { params: { lang: 'zh' } }];
+}
+
+const lang = Astro.params.lang as 'en' | 'zh';
+const title = lang === 'en' ? 'Poster — OSA' : '海报 — OSA';
+const description =
+  lang === 'en'
+    ? 'OSA CVPR 2026 Poster'
+    : 'OSA CVPR 2026 海报';
+---
+<Layout title={title} description={description} lang={lang} showFooter={false}>
+  <iframe
+    src={`${import.meta.env.BASE_URL}/poster.html`}
+    class="w-full h-screen border-0"
+    title="OSA Poster"
+    loading="lazy"
+  ></iframe>
+</Layout>

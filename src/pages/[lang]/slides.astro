@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return [{ params: { lang: 'en' } }, { params: { lang: 'zh' } }];
+}
+
+const lang = Astro.params.lang as 'en' | 'zh';
+const title = lang === 'en' ? 'Slides — OSA' : '幻灯片 — OSA';
+const description =
+  lang === 'en'
+    ? 'OSA CVPR 2026 Slides'
+    : 'OSA CVPR 2026 幻灯片';
+---
+<Layout title={title} description={description} lang={lang} showFooter={false}>
+  <iframe
+    src={`${import.meta.env.BASE_URL}/slides.html`}
+    class="w-full h-screen border-0"
+    title="OSA Slides"
+    loading="lazy"
+  ></iframe>
+</Layout>
