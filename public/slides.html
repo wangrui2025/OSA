@@ -1168,6 +1168,62 @@
                 transform: none;
             }
         }
+
+        /* ===========================================
+           PRINT STYLES — One slide per page
+           =========================================== */
+        @media print {
+            @page {
+                size: A3 landscape;
+                margin: 0;
+            }
+
+            html, body {
+                width: auto;
+                height: auto;
+                overflow: visible;
+                background: #fff;
+            }
+
+            .slide-viewport {
+                width: 100%;
+                height: auto;
+                overflow: visible;
+                background: transparent;
+            }
+
+            .slide-track {
+                display: block;
+                width: 100%;
+                height: auto;
+                padding: 0;
+                gap: 0;
+                overflow: visible;
+            }
+
+            .slide-wrapper {
+                width: 100%;
+                height: auto;
+                page-break-after: always;
+                break-after: page;
+                overflow: visible;
+                background: #fff;
+            }
+
+            .slide-wrapper:last-child {
+                page-break-after: auto;
+                break-after: auto;
+            }
+
+            .slide {
+                width: 100%;
+                height: auto;
+                max-width: 100%;
+                aspect-ratio: 16/9;
+                overflow: visible;
+                background: #fff;
+            }
+        }
     </style>
 <base target="_blank">
 </head>
