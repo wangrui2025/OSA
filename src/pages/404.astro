@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import { t } from '../i18n';
 
 const lang = (Astro.currentLocale ?? 'en') as 'en' | 'zh';
@@ -12,8 +13,9 @@ const lang = (Astro.currentLocale ?? 'en') as 'en' | 'zh';
       {t(lang, 'notFound')}
     </p>
     <a
-      href={`${import.meta.env.BASE_URL}/${lang}/`}
+      href={getRelativeLocaleUrl(lang, '/')}
       class="action-btn action-btn-primary"
+      aria-label={t(lang, 'backHome')}
     >
       {t(lang, 'backHome')}
     </a>

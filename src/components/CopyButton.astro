@@ -16,6 +16,7 @@ const { targetId, label, successLabel } = Astro.props;
   data-copy-label={label}
   data-copy-success={successLabel}
   aria-label={label}
+      aria-live="polite"
 >
   <Icon name="lucide:copy" class="w-3.5 h-3.5 copy-icon" />
   <span>{label}</span>
