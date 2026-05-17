@@ -199,10 +199,11 @@ const description =
   zoomFitBtn.addEventListener('click', () => setZoom(-1));
 
   printBtn.addEventListener('click', () => {
-    try {
-      iframe.contentWindow?.print();
-    } catch {
-      window.open(iframe.src, '_blank')?.print();
+    const printWindow = window.open(iframe.src, '_blank');
+    if (printWindow) {
+      printWindow.addEventListener('load', () => {
+        printWindow.print();
+      });
     }
   });
 
