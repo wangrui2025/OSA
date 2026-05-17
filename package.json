@@ -9,10 +9,11 @@
     "check": "astro check"
   },
   "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "@fontsource/plus-jakarta-sans": "^5.2.8",
     "@iconify-json/lucide": "^1.2.0",
     "@iconify-json/simple-icons": "^1.2.0",
     "astro": "^6.1.8",
-    "astro-expressive-code": "^0.41.0",
     "astro-icon": "^1.1.5",
     "tailwindcss": "^4.2.2",
     "zod": "^4.3.6"
