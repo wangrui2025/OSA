@@ -6,6 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OSA — Echocardiography Segmentation (CVPR 2026)</title>
 
+    <!-- SEO -->
+    <meta name="description" content="OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement. CVPR 2026 presentation slides by Rui Wang, Shenzhen University.">
+    <link rel="canonical" href="https://wangrui2025.github.io/osa/en/slides">
+
+    <!-- Open Graph -->
+    <meta property="og:site_name" content="Rui Wang">
+    <meta property="og:title" content="OSA — Echocardiography Segmentation (CVPR 2026)">
+    <meta property="og:description" content="CVPR 2026 presentation slides by Rui Wang, Shenzhen University.">
+    <meta property="og:url" content="https://wangrui2025.github.io/osa/en/slides">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://wangrui2025.github.io/osa/paper/fig/Met/fig_overview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="OSA — Echocardiography Segmentation (CVPR 2026)">
+    <meta name="twitter:description" content="CVPR 2026 presentation slides by Rui Wang, Shenzhen University.">
+
     <!-- Favicon: random Pokemon sprite -->
     <link id="pokemon-favicon" rel="icon" type="image/png" href="">
     <script>
@@ -1161,12 +1181,12 @@
         <div class="slide-wrapper">
             <section class="slide slide-title" data-slide="1" role="region" aria-roledescription="slide" aria-label="Title: OSA Echocardiography Video Segmentation">
                 <div class="header-logos">
-                    <img data-im="szu-logo" alt="SZU" class="logo-szu-img">
-                    <img data-im="polyu-logo" alt="PolyU" class="logo-polyu-img">
+                    <img src="/academic/images/logos/szu.svg" alt="SZU" class="logo-szu-img">
+                    <img src="/academic/images/logos/polyu.svg" alt="PolyU" class="logo-polyu-img">
                 </div>
                 <div class="title-header">
                     <div class="title-left">
-                        <picture><img data-im="cvpr2026-logo" alt="CVPR 2026" style="height: 120px; width: auto;"></picture>
+                        <picture><img src="/academic/images/logos/cvpr2026.png" alt="CVPR 2026" style="height: 120px; width: auto;"></picture>
                     </div>
                 </div>
                 <div class="title-banner">
@@ -1188,8 +1208,8 @@
         <div class="slide-wrapper">
             <section class="slide slide-contents" data-slide="2" role="region" aria-roledescription="slide" aria-label="Contents">
                 <div class="header-logos">
-                    <img data-im="szu-logo" alt="SZU" class="logo-szu-img">
-                    <img data-im="polyu-logo" alt="PolyU" class="logo-polyu-img">
+                    <img src="/academic/images/logos/szu.svg" alt="SZU" class="logo-szu-img">
+                    <img src="/academic/images/logos/polyu.svg" alt="PolyU" class="logo-polyu-img">
                 </div>
                 <div class="contents-sidebar">
                     <h2 class="reveal">Contents</h2>
@@ -1226,8 +1246,8 @@
         <div class="slide-wrapper">
             <section class="slide slide-problem" data-slide="3" role="region" aria-roledescription="slide" aria-label="Problem Setting">
                 <div class="header-logos">
-                    <img data-im="szu-logo" alt="SZU" class="logo-szu-img">
-                    <img data-im="polyu-logo" alt="PolyU" class="logo-polyu-img">
+                    <img src="/academic/images/logos/szu.svg" alt="SZU" class="logo-szu-img">
+                    <img src="/academic/images/logos/polyu.svg" alt="PolyU" class="logo-polyu-img">
                 </div>
                 <div class="slide-header method-header">
                     <div class="method-title-group">
@@ -1251,8 +1271,8 @@
                         </div>
                     </div>
                     <div class="problem-right">
-                        <picture><img data-im="osa-first" alt="Echocardiography frames showing speckle noise, blurred contours, and morphological variations across the cardiac cycle"></picture>
-                        <picture><img data-im="osa-challenge" alt="Visual illustration of challenges in echocardiography video segmentation"></picture>
+                        <picture><img src="/academic/images/publications/cvpr2026-osa/fig/first/fig_first.png" alt="Echocardiography frames showing speckle noise, blurred contours, and morphological variations across the cardiac cycle"></picture>
+                        <picture><img src="/academic/images/publications/cvpr2026-osa/fig/challenge/image.png" alt="Visual illustration of challenges in echocardiography video segmentation"></picture>
                     </div>
                 </div>
                 <div class="slide-number">3</div>
@@ -1263,8 +1283,8 @@
         <div class="slide-wrapper">
             <section class="slide slide-overview" data-slide="4" role="region" aria-roledescription="slide" aria-label="Method: Overview">
                 <div class="header-logos">
-                    <img data-im="szu-logo" alt="SZU" class="logo-szu-img">
-                    <img data-im="polyu-logo" alt="PolyU" class="logo-polyu-img">
+                    <img src="/academic/images/logos/szu.svg" alt="SZU" class="logo-szu-img">
+                    <img src="/academic/images/logos/polyu.svg" alt="PolyU" class="logo-polyu-img">
                 </div>
                 <div class="slide-header method-header">
                     <div class="method-title-group">
@@ -1273,7 +1293,7 @@
                     </div>
                 </div>
                 <div class="overview-img">
-                    <picture><img data-im="osa-overview" alt="OSA method overview" decoding="async"></picture>
+                    <picture><img src="/academic/images/publications/cvpr2026-osa/fig/Met/fig_overview.png" alt="OSA method overview" decoding="async"></picture>
                     <div class="overview-caption">Fig.1: Overall pipeline of OSA — Orthogonalized State Update + Anatomical Prior-aware Feature Enhancement</div>
                 </div>
                 <div class="slide-number">4</div>
@@ -1284,8 +1304,8 @@
         <div class="slide-wrapper">
             <section class="slide slide-osu" data-slide="5" role="region" aria-roledescription="slide" aria-label="Method: Orthogonalized State Update">
                 <div class="header-logos">
-                    <img data-im="szu-logo" alt="SZU" class="logo-szu-img">
-                    <img data-im="polyu-logo" alt="PolyU" class="logo-polyu-img">
+                    <img src="/academic/images/logos/szu.svg" alt="SZU" class="logo-szu-img">
+                    <img src="/academic/images/logos/polyu.svg" alt="PolyU" class="logo-polyu-img">
                 </div>
                 <div class="slide-header method-header">
                     <div class="method-title-group">
@@ -1297,7 +1317,7 @@
                     <div class="osu-grid">
                         <!-- Left: Manifold diagram -->
                         <div class="osu-col-left">
-                            <picture><img data-im="osa-osu" alt="Stiefel manifold optimization illustration"></picture>
+                            <picture><img src="/academic/images/publications/cvpr2026-osa/fig/osu/fig_osu.png" alt="Stiefel manifold optimization illustration"></picture>
                         </div>
 
                         <!-- Center: 4 formulas -->
@@ -1319,8 +1339,8 @@
                         <!-- Right: Two different vector images only -->
                         <div class="osu-col-right">
                             <div class="vector-pair">
-                                <picture><img data-im="osa-landscape-2d" alt="Euclidean update direction visualization"></picture>
-                                <picture><img data-im="osa-landscape" alt="Orthogonalized State Update direction visualization"></picture>
+                                <picture><img src="/academic/images/publications/cvpr2026-osa/fig/landscape_2d/image.png" alt="Euclidean update direction visualization"></picture>
+                                <picture><img src="/academic/images/publications/cvpr2026-osa/fig/landscape/fig_landscape.png" alt="Orthogonalized State Update direction visualization"></picture>
                             </div>
                         </div>
                     </div>
@@ -1333,8 +1353,8 @@
         <div class="slide-wrapper">
             <section class="slide slide-apfe" data-slide="6" role="region" aria-roledescription="slide" aria-label="Method: Anatomical Prior-aware Feature Enhancement">
                 <div class="header-logos">
-                    <img data-im="szu-logo" alt="SZU" class="logo-szu-img">
-                    <img data-im="polyu-logo" alt="PolyU" class="logo-polyu-img">
+                    <img src="/academic/images/logos/szu.svg" alt="SZU" class="logo-szu-img">
+                    <img src="/academic/images/logos/polyu.svg" alt="PolyU" class="logo-polyu-img">
                 </div>
                 <div class="slide-header method-header">
                     <div class="method-title-group">
@@ -1359,7 +1379,7 @@
                         </div>
                     </div>
                     <div class="apfe-right">
-                        <picture><img data-im="osa-apfe" alt="Anatomical Prior-aware Feature Enhancement diagram" style="width:100%; height:100%; object-fit:contain;"></picture>
+                        <picture><img src="/academic/images/publications/cvpr2026-osa/fig/apfe/fig_apfe.png" alt="Anatomical Prior-aware Feature Enhancement diagram" style="width:100%; height:100%; object-fit:contain;"></picture>
                     </div>
                 </div>
                 <div class="slide-number">6</div>
@@ -1370,8 +1390,8 @@
         <div class="slide-wrapper">
             <section class="slide slide-experiments" data-slide="7" role="region" aria-roledescription="slide" aria-label="Experiments: Quantitative Results">
                 <div class="header-logos">
-                    <img data-im="szu-logo" alt="SZU" class="logo-szu-img">
-                    <img data-im="polyu-logo" alt="PolyU" class="logo-polyu-img">
+                    <img src="/academic/images/logos/szu.svg" alt="SZU" class="logo-szu-img">
+                    <img src="/academic/images/logos/polyu.svg" alt="PolyU" class="logo-polyu-img">
                 </div>
                 <div class="slide-header method-header">
                     <div class="method-title-group">
@@ -1381,7 +1401,7 @@
                 </div>
                 <div class="exp-split">
                     <div class="exp-split-left">
-                        <picture><img data-im="osa-exp" alt="Quantitative comparison of OSA against baseline methods on CAMUS and EchoNet-Dynamic datasets"></picture>
+                        <picture><img src="/academic/images/publications/cvpr2026-osa/fig/Exp/image.png" alt="Quantitative comparison of OSA against baseline methods on CAMUS and EchoNet-Dynamic datasets"></picture>
                     </div>
                     <div class="exp-split-right">
                         <div class="exp-highlight">
@@ -1410,8 +1430,8 @@
         <div class="slide-wrapper">
             <section class="slide slide-experiments" data-slide="8" role="region" aria-roledescription="slide" aria-label="Experiments: Ablation and Analysis">
                 <div class="header-logos">
-                    <img data-im="szu-logo" alt="SZU" class="logo-szu-img">
-                    <img data-im="polyu-logo" alt="PolyU" class="logo-polyu-img">
+                    <img src="/academic/images/logos/szu.svg" alt="SZU" class="logo-szu-img">
+                    <img src="/academic/images/logos/polyu.svg" alt="PolyU" class="logo-polyu-img">
                 </div>
                 <div class="slide-header method-header">
                     <div class="method-title-group">
@@ -1421,9 +1441,9 @@
                 </div>
                 <div class="exp-content-wrapper">
                     <div class="exp-grid-2-1">
-                        <picture><img data-im="osa-ablation" alt="Ablation study results for OSU and APFE modules" class="exp-img"></picture>
-                        <picture><img data-im="osa-fail" alt="Failure case analysis on challenging echocardiography sequences" class="exp-img"></picture>
-                        <picture><img data-im="osa-tab-ablation" alt="Quantitative ablation results table comparing module contributions" class="exp-img exp-img-table"></picture>
+                        <picture><img src="/academic/images/publications/cvpr2026-osa/fig/abl/fig_abl.png" alt="Ablation study results for OSU and APFE modules" class="exp-img"></picture>
+                        <picture><img src="/academic/images/publications/cvpr2026-osa/fig/fail/fig_fail.png" alt="Failure case analysis on challenging echocardiography sequences" class="exp-img"></picture>
+                        <picture><img src="/academic/images/publications/cvpr2026-osa/tab/tab_abl.png" alt="Quantitative ablation results table comparing module contributions" class="exp-img exp-img-table"></picture>
                     </div>
                 </div>
                 <div class="slide-number">8</div>
@@ -1434,8 +1454,8 @@
         <div class="slide-wrapper">
             <section class="slide slide-discussion" data-slide="9" role="region" aria-roledescription="slide" aria-label="Discussion">
                 <div class="header-logos">
-                    <img data-im="szu-logo" alt="SZU" class="logo-szu-img">
-                    <img data-im="polyu-logo" alt="PolyU" class="logo-polyu-img">
+                    <img src="/academic/images/logos/szu.svg" alt="SZU" class="logo-szu-img">
+                    <img src="/academic/images/logos/polyu.svg" alt="PolyU" class="logo-polyu-img">
                 </div>
                 <div class="slide-header method-header">
                     <div class="method-title-group">
@@ -1465,12 +1485,12 @@
         <div class="slide-wrapper">
             <section class="slide slide-thanks" data-slide="10" role="region" aria-roledescription="slide" aria-label="Thank You">
                 <div class="header-logos">
-                    <img data-im="szu-logo" alt="SZU" class="logo-szu-img">
-                    <img data-im="polyu-logo" alt="PolyU" class="logo-polyu-img">
+                    <img src="/academic/images/logos/szu.svg" alt="SZU" class="logo-szu-img">
+                    <img src="/academic/images/logos/polyu.svg" alt="PolyU" class="logo-polyu-img">
                 </div>
                 <div class="thanks-header">
                     <div class="thanks-conf">
-                        <picture><img data-im="cvpr2026-logo" alt="CVPR 2026" style="height: 120px; width: auto;"></picture>
+                        <picture><img src="/academic/images/logos/cvpr2026.png" alt="CVPR 2026" style="height: 120px; width: auto;"></picture>
                     </div>
                 </div>
                 <div class="thanks-banner">
