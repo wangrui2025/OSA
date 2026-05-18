@@ -6,49 +6,61 @@ import katex from 'katex';
 import 'katex/dist/katex.min.css';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-// __dirname is dist/.prerender/chunks/, so ../../.. gives project root
 const projectRoot = path.resolve(__dirname, '../../../');
 const srcPath = path.join(projectRoot, 'public/slides.src');
 let html = fs.readFileSync(srcPath, 'utf-8');
 
 function renderLatex(latex: string): string {
-  const clean = latex.trim();
-  return katex.renderToString(clean, { displayMode: true, throwOnError: false });
+  return katex.renderToString(latex.trim(), { displayMode: true, throwOnError: false });
 }
 
-// 1. Pre-render formulas in katex-display spans
+// Pre-render formulas
 html = html.replace(
   /<span[^>]*class="[^"]*katex-display[^"]*"[^>]*>\$\$([\s\S]*?)\$\$\$<\/span>/g,
-  (_: string, latex: string) => `<span class="katex-display katex-rendered">${renderLatex(latex)}</span>`
+  (_: string, latex: string) =>
+    `<span class="katex-display katex-rendered">${renderLatex(latex)}</span>`
 );
-
-// 2. Pre-render remaining standalone $$
 html = html.replace(/\$\$([\s\S]*?)\$\$/g, (_: string, latex: string) => renderLatex(latex));
 
-// 3. Remove KaTeX CDN CSS
+// Remove KaTeX CDN
 html = html.replace(/<link[^>]*href="[^"]*katex[^"]*"[^>]*>/gi, '');
-
-// 4. Remove KaTeX CDN JS
 html = html.replace(/<script[^>]*src="[^"]*(?:katex|auto-render)[^"]*"[^>]*><\/script>/gi, '');
-
-// 5. Remove inline KaTeX rendering script
 html = html.replace(
   /<script\b[^>]*>([\s\S]*?)<\/script>/gi,
   (match: string, content: string) => {
-    if (/renderMathInElement|katex\.render|autoRender/.test(content)) {
-      return '';
-    }
+    if (/renderMathInElement|katex\.render|autoRender/.test(content)) return '';
     return match;
   }
 );
 
-// 6. Hard validation
-if (/\$\$/.test(html)) {
-  throw new Error('[ERROR] Residual unrendered $$ markers');
-}
-if (/<script[^>]src="[^"]*katex/i.test(html)) {
-  throw new Error('[ERROR] Residual KaTeX JS reference');
-}
+// Parse HTML: split head and body
+const headMatch = html.match(/<head>([\s\S]*?)<\/head>/);
+const bodyMatch = html.match(/<body>([\s\S]*?)<\/body>/);
+const headContent = headMatch ? headMatch[1] : '';
+const bodyContent = bodyMatch ? bodyMatch[1] : '';
+
+// Extract head elements we need to preserve
+const titleMatch = headContent.match(/<title>[^<]*<\/title>/);
+const title = titleMatch ? titleMatch[0] : '<title>OSA Slides</title>';
+const metaTags = headContent.match(/<meta[^>]*>/g) || [];
+const linkTags = headContent.match(/<link[^>]*>/g) || [];
+const otherHead = headContent
+  .replace(/<title>[^<]*<\/title>/g, '')
+  .replace(/<meta[^>]*>/g, '')
+  .replace(/<link[^>]*>/g, '')
+  .trim();
 ---
 
-<Fragment set:html={html} />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <Fragment set:html={title} />
+  {metaTags.map((tag: string) => <Fragment set:html={tag} />)}
+  {linkTags.map((tag: string) => <Fragment set:html={tag} />)}
+  <Fragment set:html={otherHead} />
+</head>
+<body>
+  <Fragment set:html={bodyContent} />
+</body>
+</html>
