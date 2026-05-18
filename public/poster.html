@@ -257,17 +257,17 @@
         .figure {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 0.1in;
-            margin: 0.2in 0;
+            align-items: stretch;
+            gap: 0.08in;
+            margin: 0.15in 0;
             background: #f8f9fa;
-            padding: 0.2in;
+            padding: 0.1in;
             border-radius: 9pt;
             border: 2.25pt solid #e0e0e0;
         }
 
         .figure img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
             object-fit: contain;
             border-radius: 6pt;
@@ -476,7 +476,7 @@
                             </ul>
                         </div>
                         <div class="figure">
-                            <img src="/academic/images/publications/cvpr2026-osa/fig/challenge/image.png" alt="Challenges" style="max-height: 4.5in;">
+                            <img src="/academic/images/publications/cvpr2026-osa/fig/challenge/image.png" alt="Challenges" >
                             <div class="figure-caption">Figure 1. Challenges: speckle noise, blurred contours, and shape variations.</div>
                         </div>
                     </div>
@@ -491,7 +491,7 @@
                             </ul>
                         </div>
                         <div class="figure">
-                            <img src="/academic/images/publications/cvpr2026-osa/fig/first/fig_first.png" alt="OSA Teaser" style="max-height: 3.5in;">
+                            <img src="/academic/images/publications/cvpr2026-osa/fig/first/fig_first.png" alt="OSA Teaser" >
                             <div class="figure-caption">Figure 2. Paradigm comparison: Memory Bank, LRM, and OSA.</div>
                         </div>
                     </div>
@@ -517,7 +517,7 @@
                             OSA segments LV using a <strong>ResNet-50</strong> backbone.
                         </div>
                         <div class="figure">
-                            <img src="/academic/images/publications/cvpr2026-osa/fig/Met/fig_overview.png" alt="OSA Architecture" style="max-height: 2.5in;">
+                            <img src="/academic/images/publications/cvpr2026-osa/fig/Met/fig_overview.png" alt="OSA Architecture" >
                             <div class="figure-caption">Figure 3. OSA architecture: APFE → OSU → decoder.</div>
                         </div>
                         <div class="section-body">
@@ -551,14 +551,8 @@
                             Full: 94.82 mDice. w/o APFE: 93.61. w/o OSU: 94.12. Both essential.
                         </div>
                         <div class="figure">
-                            <img src="/academic/images/publications/cvpr2026-osa/tab/tab_abl.png" alt="Ablation Table" style="max-height: 2.5in;">
+                            <img src="/academic/images/publications/cvpr2026-osa/tab/tab_abl.png" alt="Ablation Table" >
                             <div class="figure-caption">Table 2. Ablation study on CAMUS.</div>
-                        </div>
-                        <div class="formula-box">
-                            <div class="formula">
-                                <strong>X</strong><sub>t</sub> = <strong>X</strong><sub>t</sub><sup>+</sup> &minus; <strong>X</strong><sub>t</sub><sup>&minus;</sup> + <strong>M</strong><sub>t</sub>
-                            </div>
-                            <div style="font-size: 31pt; margin-top: 0.08in; text-align: center; color: #555;">Lossless residual decomposition (APFE)</div>
                         </div>
                     </div>
                 </div>
@@ -583,7 +577,7 @@
                             OSU projects state updates onto the Stiefel manifold, ensuring stable transitions across the cardiac cycle.
                         </div>
                         <div class="figure">
-                            <img src="/academic/images/publications/cvpr2026-osa/fig/osu/fig_osu.png" alt="OSU Detail" style="max-height: 5.5in;">
+                            <img src="/academic/images/publications/cvpr2026-osa/fig/osu/fig_osu.png" alt="OSU Detail" >
                             <div class="figure-caption">Figure 4. OSU: orthogonalized update preserves manifold structure.</div>
                         </div>
                     </div>
@@ -594,7 +588,7 @@
                             APFE decouples anatomy from speckle noise via <strong>physics-driven decomposition</strong>, building stable structural anchors.
                         </div>
                         <div class="figure">
-                            <img src="/academic/images/publications/cvpr2026-osa/fig/apfe/fig_apfe.png" alt="APFE Detail" style="max-height: 5.5in;">
+                            <img src="/academic/images/publications/cvpr2026-osa/fig/apfe/fig_apfe.png" alt="APFE Detail" >
                             <div class="figure-caption">Figure 5. APFE: contrast decomposition provides noise-resilient cues.</div>
                         </div>
                     </div>
@@ -608,7 +602,7 @@
                             SOTA on <strong>CAMUS</strong> & <strong>EchoNet-Dynamic</strong> across mDice, mIoU, HD, and ASD.
                         </div>
                         <div class="table-wrap">
-                            <img src="/academic/images/publications/cvpr2026-osa/tab/tab_cap.png" alt="Main Results" style="max-height: 6in;">
+                            <img src="/academic/images/publications/cvpr2026-osa/tab/tab_cap.png" alt="Main Results" >
                         </div>
                         <div class="figure-caption">Table 1. Segmentation performance on CAMUS and EchoNet-Dynamic.</div>
                     </div>
@@ -631,7 +625,7 @@
                             OSA shows superior boundary adherence and fewer false positives in speckle-dense regions.
                         </div>
                         <div class="figure">
-                            <img src="/academic/images/publications/cvpr2026-osa/fig/Exp/image.png" alt="Qualitative Results" style="max-height: 5.3in;">
+                            <img src="/academic/images/publications/cvpr2026-osa/fig/Exp/image.png" alt="Qualitative Results" >
                             <div class="figure-caption">Figure 6. Visual comparison. Green = GT, Red = pred, Yellow = overlap.</div>
                         </div>
                     </div>
