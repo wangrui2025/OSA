@@ -559,12 +559,21 @@
                             Linear recurrent models suffer <strong>rank collapse</strong>: unconstrained updates decay singular values in <strong>S</strong><sub>t</sub>.
                         </div>
                         <div class="formula-box">
-                            <div style="font-size: 36pt; margin-bottom: 0.12in; text-align: center; color: #555;">State Update on Stiefel Manifold</div>
+                            <div style="font-size: 31pt; margin-bottom: 0.1in; text-align: center; color: #555;">Stiefel Manifold Definition</div>
                             <div class="formula">
-                                <strong>S</strong><sub>t</sub> = OrthProj<sub>Stiefel</sub>( <strong>S</strong><sub>t&minus;1</sub> + &eta;&middot;&nabla;<strong>S</strong> <strong>L</strong> )
+                                <strong>𝒱</strong><sub>C<sub>v</sub>, C<sub>k</sub></sub> = { <strong>S</strong> &isin; &real;<sup>C<sub>v</sub>&times;C<sub>k</sub></sup> : <strong>S</strong><sup>&top;</sup><strong>S</strong> = <strong>I</strong><sub>C<sub>k</sub></sub> }
                             </div>
-                            <div style="font-size: 36pt; margin-top: 0.08in; text-align: center; color: #555;">
-                                via Newton-Schulz iteration + weight decay
+                            <div style="font-size: 31pt; margin: 0.1in 0; text-align: center; color: #555;">Unconstrained State Evolution</div>
+                            <div class="formula">
+                                <strong>S</strong><sub>t</sub><sup>Euc</sup> = <strong>S</strong><sub>t&minus;1</sub>(<strong>&alpha;</strong><sub>t</sub>(<strong>I</strong><sub>C<sub>k</sub></sub> &minus; <strong>&beta;</strong><sub>t</sub><strong>k</strong><sub>t</sub><strong>k</strong><sub>t</sub><sup>&top;</sup>)) + <strong>&beta;</strong><sub>t</sub><strong>v</strong><sub>t</sub><strong>k</strong><sub>t</sub><sup>&top;</sup>
+                            </div>
+                            <div style="font-size: 31pt; margin: 0.1in 0; text-align: center; color: #555;">Newton-Schulz Initialization</div>
+                            <div class="formula">
+                                <strong>X</strong><sup>(0)</sup> = <strong>S</strong><sub>t</sub><sup>Euc</sup> / (&par;<strong>S</strong><sub>t</sub><sup>Euc</sup>&par;<sub>F</sub> + &epsilon;)
+                            </div>
+                            <div style="font-size: 31pt; margin: 0.1in 0; text-align: center; color: #555;">High-Order Newton-Schulz Iteration</div>
+                            <div class="formula">
+                                <strong>X</strong><sup>(j+1)</sup> = <strong>a</strong><strong>X</strong><sup>(j)</sup> + <strong>b</strong><strong>X</strong><sup>(j)</sup>(<strong>X</strong><sup>(j)</sup>)<sup>&top;</sup><strong>X</strong><sup>(j)</sup> + <strong>c</strong><strong>X</strong><sup>(j)</sup>((<strong>X</strong><sup>(j)</sup>)<sup>&top;</sup><strong>X</strong><sup>(j)</sup>)<sup>2</sup>
                             </div>
                         </div>
                         <div class="section-body">
