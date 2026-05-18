@@ -1045,6 +1045,128 @@
         }
 
         /* ===========================================
+           SLIDE 10: CONCLUSION
+           =========================================== */
+        .slide-conclusion {
+            padding: 0 75px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .slide-conclusion .slide-header {
+            padding-top: 30px;
+            padding-bottom: 15px;
+            width: 100%;
+        }
+
+        .slide-conclusion .slide-header h1 {
+            font-size: 54px;
+        }
+
+        .conclusion-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 1650px;
+        }
+
+        .conclusion-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            background: var(--bg-light);
+            border-left: 8px solid var(--brand);
+            border-radius: 0 10px 10px 0;
+            padding: 24px 36px;
+        }
+
+        .conclusion-item .bullet {
+            width: 42px;
+            height: 42px;
+            background: var(--brand);
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .conclusion-item p {
+            font-size: 32px;
+            line-height: 1.5;
+            color: var(--text-primary);
+        }
+
+        .conclusion-item .hl-brand {
+            color: var(--brand);
+            font-weight: 700;
+        }
+
+        /* ===========================================
+           SLIDE 11: LIMITATION
+           =========================================== */
+        .slide-limitation {
+            padding: 0 75px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .slide-limitation .slide-header {
+            padding-top: 30px;
+            padding-bottom: 15px;
+            width: 100%;
+        }
+
+        .slide-limitation .slide-header h1 {
+            font-size: 54px;
+        }
+
+        .limitation-content {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 1650px;
+        }
+
+        .limitation-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            background: var(--bg-light);
+            border-left: 8px solid var(--text-secondary);
+            border-radius: 0 10px 10px 0;
+            padding: 30px 40px;
+        }
+
+        .limitation-item .bullet {
+            font-size: 48px;
+            color: var(--text-secondary);
+            font-weight: 700;
+            line-height: 1.4;
+            flex-shrink: 0;
+        }
+
+        .limitation-item p {
+            font-size: 36px;
+            line-height: 1.5;
+        }
+
+        .limitation-item .label {
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+
+        /* ===========================================
            SLIDE 10: THANKS
            =========================================== */
         .slide-thanks {
@@ -1541,9 +1663,75 @@
             </section>
         </div>
 
-        <!-- ========== SLIDE 10: THANKS ========== -->
+        <!-- ========== SLIDE 10: CONCLUSION ========== -->
         <div class="slide-wrapper">
-            <section class="slide slide-thanks" data-slide="10" role="region" aria-roledescription="slide" aria-label="Thank You">
+            <section class="slide slide-conclusion" data-slide="10" role="region" aria-roledescription="slide" aria-label="Conclusion">
+                <div class="header-logos">
+                    <img src="/academic/images/logos/szu.svg" alt="SZU" class="logo-szu-img">
+                    <img src="/academic/images/logos/polyu.svg" alt="PolyU" class="logo-polyu-img">
+                </div>
+                <div class="slide-header method-header">
+                    <div class="method-title-group">
+                        <h1 class="reveal">Conclusion</h1>
+                        <div class="method-divider"></div>
+                    </div>
+                </div>
+                <div class="conclusion-content">
+                    <div class="conclusion-item">
+                        <span class="bullet">1</span>
+                        <p>We propose <span class="hl-brand">OSA</span>, a novel framework for echocardiography video segmentation with orthogonalized state updates.</p>
+                    </div>
+                    <div class="conclusion-item">
+                        <span class="bullet">2</span>
+                        <p><span class="hl-brand">OSU</span> prevents rank collapse by constraining state evolution on the Stiefel manifold.</p>
+                    </div>
+                    <div class="conclusion-item">
+                        <span class="bullet">3</span>
+                        <p><span class="hl-brand">APFE</span> enhances feature discrimination through anatomical prior-aware enhancement.</p>
+                    </div>
+                    <div class="conclusion-item">
+                        <span class="bullet">4</span>
+                        <p>OSA achieves <strong>state-of-the-art</strong> accuracy and temporal stability on CAMUS and EchoNet-Dynamic.</p>
+                    </div>
+                </div>
+                <div class="slide-number">10</div>
+            </section>
+        </div>
+
+        <!-- ========== SLIDE 11: LIMITATION ========== -->
+        <div class="slide-wrapper">
+            <section class="slide slide-limitation" data-slide="11" role="region" aria-roledescription="slide" aria-label="Limitation">
+                <div class="header-logos">
+                    <img src="/academic/images/logos/szu.svg" alt="SZU" class="logo-szu-img">
+                    <img src="/academic/images/logos/polyu.svg" alt="PolyU" class="logo-polyu-img">
+                </div>
+                <div class="slide-header method-header">
+                    <div class="method-title-group">
+                        <h1 class="reveal">Limitation</h1>
+                        <div class="method-divider"></div>
+                    </div>
+                </div>
+                <div class="limitation-content">
+                    <div class="limitation-item">
+                        <span class="bullet">•</span>
+                        <p><span class="label">Dataset scope:</span> Evaluated only on 2D echocardiography; extension to 3D volumes remains future work.</p>
+                    </div>
+                    <div class="limitation-item">
+                        <span class="bullet">•</span>
+                        <p><span class="label">Multi-view fusion:</span> Current model processes single-view videos; multi-view information is not exploited.</p>
+                    </div>
+                    <div class="limitation-item">
+                        <span class="bullet">•</span>
+                        <p><span class="label">Real-time deployment:</span> Hardware-specific optimization for edge devices is not yet explored.</p>
+                    </div>
+                </div>
+                <div class="slide-number">11</div>
+            </section>
+        </div>
+
+        <!-- ========== SLIDE 12: THANKS ========== -->
+        <div class="slide-wrapper">
+            <section class="slide slide-thanks" data-slide="12" role="region" aria-roledescription="slide" aria-label="Thank You">
                 <div class="header-logos">
                     <img src="/academic/images/logos/szu.svg" alt="SZU" class="logo-szu-img">
                     <img src="/academic/images/logos/polyu.svg" alt="PolyU" class="logo-polyu-img">
@@ -1556,11 +1744,8 @@
                 <div class="thanks-banner">
                     <h1 class="reveal-scale">Thanks!</h1>
                 </div>
-                <div class="thanks-footer">
-                    <div class="contact">Paper: <a href="https://arxiv.org/abs/2603.26188">arXiv:2603.26188</a></div>
-                    <div class="contact">Code: <a href="https://github.com/wangrui2025/osa">github.com/wangrui2025/osa</a></div>
-                </div>
-                <div class="slide-number">10</div>
+                <!-- Paper & Code links removed -->
+                <div class="slide-number">12</div>
             </section>
         </div>
 
