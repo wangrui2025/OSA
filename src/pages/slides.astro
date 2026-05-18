@@ -7,22 +7,14 @@ import 'katex/dist/katex.min.css';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '../../../');
-const srcPath = path.join(projectRoot, 'public/slides.src');
+const srcPath = path.join(process.cwd(), 'public/slides.src');
 let html = fs.readFileSync(srcPath, 'utf-8');
 
 function renderLatex(latex: string): string {
   return katex.renderToString(latex.trim(), { displayMode: true, throwOnError: false });
 }
 
-// Pre-render formulas
-html = html.replace(
-  /<span[^>]*class="[^"]*katex-display[^"]*"[^>]*>\$\$([\s\S]*?)\$\$\$<\/span>/g,
-  (_: string, latex: string) =>
-    `<span class="katex-display katex-rendered">${renderLatex(latex)}</span>`
-);
-html = html.replace(/\$\$([\s\S]*?)\$\$/g, (_: string, latex: string) => renderLatex(latex));
-
-// Remove KaTeX CDN
+// Step 1: Remove KaTeX CDN scripts/styles first (before formula replacement)
 html = html.replace(/<link[^>]*href="[^"]*katex[^"]*"[^>]*>/gi, '');
 html = html.replace(/<script[^>]*src="[^"]*(?:katex|auto-render)[^"]*"[^>]*><\/script>/gi, '');
 html = html.replace(
@@ -32,6 +24,14 @@ html = html.replace(
     return match;
   }
 );
+
+// Step 2: Pre-render formulas (use $ not $$)
+html = html.replace(
+  /<span[^>]*class="[^"]*katex-display[^"]*"[^>]*>\$([^$]+)\$<\/span>/g,
+  (_: string, latex: string) =>
+    `<span class="katex-display katex-rendered">${renderLatex(latex)}</span>`
+);
+html = html.replace(/\$([^$\n]+)\$/g, (_: string, latex: string) => renderLatex(latex));
 
 // Parse HTML: split head and body
 const headMatch = html.match(/<head>([\s\S]*?)<\/head>/);
