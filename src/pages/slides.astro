@@ -25,13 +25,16 @@ html = html.replace(
   }
 );
 
-// Step 2: Pre-render formulas (use $ not $$)
+// Step 2: Pre-render formulas (source uses $$...$$ format inside katex-display spans)
 html = html.replace(
-  /<span[^>]*class="[^"]*katex-display[^"]*"[^>]*>\$([^$]+)\$<\/span>/g,
-  (_: string, latex: string) =>
-    `<span class="katex-display katex-rendered">${renderLatex(latex)}</span>`
+  /<span[^>]*class="[^"]*katex-display[^"]*"[^>]*>\$\$([^$]+)\$\$/g,
+  (_: string, latex: string) => {
+    const rendered = renderLatex(latex);
+    // KaTeX outputs katex-display span; strip it to avoid nesting
+    const stripped = rendered.replace(/<span class="katex-display">/, '<span class="katex-rendered-inner">');
+    return stripped;
+  }
 );
-html = html.replace(/\$([^$\n]+)\$/g, (_: string, latex: string) => renderLatex(latex));
 
 // Parse HTML: split head and body
 const headMatch = html.match(/<head>([\s\S]*?)<\/head>/);
