@@ -1166,6 +1166,19 @@
             color: var(--text-secondary);
         }
 
+        .limitation-figure {
+            margin-top: 30px;
+            width: 100%;
+            max-width: 1650px;
+        }
+
+        .limitation-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid var(--border-color, #e5e7eb);
+        }
+
         /* ===========================================
            SLIDE 10: THANKS
            =========================================== */
@@ -1600,7 +1613,7 @@
                         </div>
                         <div class="exp-highlight">
                             <div class="num">04</div>
-                            <p>Lightweight design: only <span class="hl-brand">+3.2%</span> params vs. baseline.</p>
+                            <p>Lightweight design: only <span class="hl-brand">+8.8%</span> params vs. GDKVM (38.3 vs 35.2 M).</p>
                         </div>
                     </div>
                 </div>
@@ -1624,7 +1637,6 @@
                 <div class="exp-content-wrapper">
                     <div class="exp-grid-2-1">
                         <picture><img src="/academic/images/publications/cvpr2026-osa/fig/abl/fig_abl.png" alt="Ablation study results for OSU and APFE modules" class="exp-img"></picture>
-                        <picture><img src="/academic/images/publications/cvpr2026-osa/fig/fail/fig_fail.png" alt="Failure case analysis on challenging echocardiography sequences" class="exp-img"></picture>
                         <picture><img src="/academic/images/publications/cvpr2026-osa/tab/tab_abl.png" alt="Quantitative ablation results table comparing module contributions" class="exp-img exp-img-table"></picture>
                     </div>
                 </div>
@@ -1714,16 +1726,23 @@
                 <div class="limitation-content">
                     <div class="limitation-item">
                         <span class="bullet">•</span>
-                        <p><span class="label">Dataset scope:</span> Evaluated only on 2D echocardiography; extension to 3D volumes remains future work.</p>
+                        <p><span class="label">Fixed-length training:</span> Training regime is constrained by fixed-length sequences; real-world medical videos are continuous with varied durations.</p>
                     </div>
                     <div class="limitation-item">
                         <span class="bullet">•</span>
-                        <p><span class="label">Multi-view fusion:</span> Current model processes single-view videos; multi-view information is not exploited.</p>
+                        <p><span class="label">Online inference:</span> Maintaining stable memory propagation in a fully online setting remains challenging.</p>
                     </div>
                     <div class="limitation-item">
                         <span class="bullet">•</span>
-                        <p><span class="label">Real-time deployment:</span> Hardware-specific optimization for edge devices is not yet explored.</p>
+                        <p><span class="label">Failure cases:</span> The method may produce failure cases in some situations (Fig. 9), potentially related to initialization.</p>
                     </div>
+                    <div class="limitation-item">
+                        <span class="bullet">•</span>
+                        <p><span class="label">Domain shift:</span> Evaluation on datasets with consistent imaging protocols may lack robustness against real-world domain shifts (varying ultrasound equipment, probe orientations, image qualities).</p>
+                    </div>
+                </div>
+                <div class="limitation-figure">
+                    <picture><img src="/academic/images/publications/cvpr2026-osa/fig/fail/fig_fail.png" alt="Failure cases on CAMUS and EchoNet-Dynamic" class="limitation-img"></picture>
                 </div>
                 <div class="slide-number">11</div>
             </section>
