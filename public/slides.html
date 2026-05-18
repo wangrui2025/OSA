@@ -1792,7 +1792,7 @@
            KaTeX RENDERING
            =========================================== */
         if (typeof renderMathInElement !== 'undefined') {
-            document.fonts.ready.then(function() {
+            window.addEventListener('load', function() {
                 renderMathInElement(document.body, {
                     delimiters: [
                         { left: '$$', right: '$$', display: true },
