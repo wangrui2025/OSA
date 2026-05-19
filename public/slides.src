@@ -1378,6 +1378,33 @@
                 height: auto;
                 display: block;
             }
+
+            /* Slide 5 OSU grid: force two columns in print */
+            .osu-grid {
+                display: flex !important;
+                flex-direction: row !important;
+            }
+            .osu-col-center,
+            .osu-col-left {
+                width: 50% !important;
+                min-width: 0 !important;
+            }
+
+            /* Slide 11 limitation: force two columns in print */
+            .limitation-content {
+                display: flex !important;
+                flex-direction: row !important;
+                gap: 30px !important;
+            }
+            .limitation-left,
+            .limitation-right {
+                width: 50% !important;
+            }
+            .limitation-right img {
+                max-width: 100% !important;
+                max-height: 100% !important;
+                object-fit: contain !important;
+            }
         }
     </style>
 <base target="_blank">
