@@ -1,16 +1,14 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { t } from '../../i18n/index.ts';
 
 export function getStaticPaths() {
   return [{ params: { lang: 'en' } }, { params: { lang: 'zh' } }];
 }
 
 const lang = Astro.params.lang as 'en' | 'zh';
-const title = lang === 'en' ? 'Poster — OSA' : '海报 — OSA';
-const description =
-  lang === 'en'
-    ? 'OSA CVPR 2026 Poster'
-    : 'OSA CVPR 2026 海报';
+const title = t(lang, 'poster.title');
+const description = t(lang, 'poster.description');
 ---
 <Layout title={title} description={description} lang={lang} showFooter={false}>
   <iframe
