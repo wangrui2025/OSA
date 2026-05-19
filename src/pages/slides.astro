@@ -1,12 +1,9 @@
 ---
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
 import katex from 'katex';
 import 'katex/dist/katex.min.css';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const projectRoot = path.resolve(__dirname, '../../../');
 const srcPath = path.join(process.cwd(), 'public/slides.src');
 let html = fs.readFileSync(srcPath, 'utf-8');
 
@@ -24,7 +21,7 @@ const rmeEnd = "});\n        }\n    </script>";
 const rmeRegex = new RegExp(rmeStart.replace(/[()]/g, '\\$&') + '[\\s\\S]*?' + rmeEnd.replace(/[()]/g, '\\$&'), 'gi');
 html = html.replace(rmeRegex, '');
 
-// Step 2: Pre-render formulas (source uses $$...$$ format inside katex-display spans)
+// Step 3: Pre-render formulas (source uses $$...$$ format inside katex-display spans)
 html = html.replace(
   /<span[^>]*class="[^"]*katex-display[^"]*"[^>]*>\$\$([^$]+)\$\$/g,
   (_: string, latex: string) => {
@@ -34,6 +31,10 @@ html = html.replace(
     return stripped;
   }
 );
+
+// Step 4: Fix font paths - add /osa prefix for GitHub Pages
+const base = '/osa';
+html = html.replace(/href="\/fonts\//g, `href="${base}/fonts/`);
 
 // Parse HTML: split head and body
 const headMatch = html.match(/<head>([\s\S]*?)<\/head>/);
@@ -53,6 +54,7 @@ const otherHead = headContent
   .trim();
 ---
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
