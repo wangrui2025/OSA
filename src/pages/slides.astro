@@ -17,13 +17,12 @@ function renderLatex(latex: string): string {
 // Step 1: Remove KaTeX CDN scripts/styles first (before formula replacement)
 html = html.replace(/<link[^>]*href="[^"]*katex[^"]*"[^>]*>/gi, '');
 html = html.replace(/<script[^>]*src="[^"]*(?:katex|auto-render)[^"]*"[^>]*><\/script>/gi, '');
-html = html.replace(
-  /<script\b[^>]*>([\s\S]*?)<\/script>/gi,
-  (match: string, content: string) => {
-    if (/renderMathInElement|katex\.render|autoRender/.test(content)) return '';
-    return match;
-  }
-);
+
+// Step 2: Precisely remove ONLY the renderMathInElement block, keep updateScales
+const rmeStart = "if (typeof renderMathInElement !== 'undefined')";
+const rmeEnd = "});\n        }\n    </script>";
+const rmeRegex = new RegExp(rmeStart.replace(/[()]/g, '\\$&') + '[\\s\\S]*?' + rmeEnd.replace(/[()]/g, '\\$&'), 'gi');
+html = html.replace(rmeRegex, '');
 
 // Step 2: Pre-render formulas (source uses $$...$$ format inside katex-display spans)
 html = html.replace(
