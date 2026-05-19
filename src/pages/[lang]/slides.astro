@@ -163,12 +163,13 @@ const description =
   const zoomSteps = [0.2, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0];
   let currentZoomIndex = -1; // -1 = fit
 
-  function updateActiveBtn() {
+  function clearActiveButtons() {
     [zoomInBtn, zoomOutBtn, zoomFitBtn].forEach(b => b.classList.remove('active'));
   }
 
   function setZoom(index: number) {
     currentZoomIndex = index;
+    clearActiveButtons();
     if (index === -1) {
       scaler.style.transform = '';
       scaler.style.width = '';
@@ -180,9 +181,7 @@ const description =
       // Width must expand to accommodate scaled iframe so no clipping
       scaler.style.width = `${(100 / z)}%`;
       zoomLevelEl.textContent = `${Math.round(z * 100)}%`;
-      zoomFitBtn.classList.remove('active');
     }
-    updateActiveBtn();
   }
 
   zoomInBtn.addEventListener('click', () => {
@@ -191,7 +190,7 @@ const description =
   });
 
   zoomOutBtn.addEventListener('click', () => {
-    if (currentZoomIndex === -1) setZoom(2); // start at 200% (zoom out)
+    if (currentZoomIndex === -1) setZoom(2); // start at 75%
     else if (currentZoomIndex > 0) setZoom(currentZoomIndex - 1);
     else if (currentZoomIndex === 0) setZoom(-1);
   });
@@ -201,9 +200,12 @@ const description =
   printBtn.addEventListener('click', () => {
     const printWindow = window.open(iframe.src, '_blank');
     if (printWindow) {
-      printWindow.addEventListener('load', () => {
-        printWindow.print();
-      });
+      const doPrint = () => printWindow.print();
+      if (printWindow.document.readyState === 'complete') {
+        doPrint();
+      } else {
+        printWindow.addEventListener('load', doPrint);
+      }
     }
   });
 
