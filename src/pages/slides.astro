@@ -17,7 +17,7 @@ html = html.replace(/<script[^>]*src="[^"]*(?:katex|auto-render)[^"]*"[^>]*><\/s
 
 // Step 2: Precisely remove ONLY the renderMathInElement block, keep updateScales
 const rmeStart = "if (typeof renderMathInElement !== 'undefined')";
-const rmeEnd = "});\n        }\n    </script>";
+const rmeEnd = "});\n        }";
 const rmeRegex = new RegExp(rmeStart.replace(/[()]/g, '\\$&') + '[\\s\\S]*?' + rmeEnd.replace(/[()]/g, '\\$&'), 'gi');
 html = html.replace(rmeRegex, '');
 
