@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSA — Echocardiography Segmentation (CVPR 2026)</title>
+    <title>osa slides</title>
 
     <!-- SEO -->
     <meta name="description" content="OSA: Echocardiography Video Segmentation via Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement. CVPR 2026 presentation slides by Rui Wang, Shenzhen University.">
@@ -695,9 +695,9 @@
             align-items: stretch;
         }
 
-        /* ---- Left column: Manifold diagram (30% width) ---- */
+        /* ---- Left column: Manifold diagram (48% width) ---- */
         .osu-col-left {
-            width: 42%;
+            width: 48%;
             height: 100%;
             min-width: 0;
             display: flex;
@@ -720,9 +720,9 @@
             object-fit: contain;
         }
 
-        /* ---- Center column: Formulas (26% width) ---- */
+        /* ---- Center column: Formulas (52% width) ---- */
         .osu-col-center {
-            width: 54%;
+            width: 52%;
             height: 100%;
             min-width: 0;
             display: flex;
@@ -746,10 +746,10 @@
             overflow: visible;
         }
         .osu-col-center .formula-box .katex {
-            font-size: 16px !important;
+            font-size: 26px !important;
         }
         .osu-col-center .formula-box.proj-formula .katex {
-            font-size: 16px !important;
+            font-size: 26px !important;
             font-weight: 600;
         }
         .osu-col-center .formula-box + .formula-box {
@@ -1132,11 +1132,18 @@
 
         .limitation-content {
             display: flex;
-            flex-direction: column;
-            gap: 14px;
+            gap: 45px;
+            flex: 1;
+            align-items: stretch;
             margin-top: 12px;
             width: 100%;
-            max-width: 1650px;
+        }
+
+        .limitation-left {
+            width: 48%;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
         }
 
         .limitation-item {
@@ -1167,17 +1174,25 @@
             color: var(--text-secondary);
         }
 
-        .limitation-figure {
-            margin-top: 12px;
-            width: 100%;
-            max-width: 1650px;
+        .limitation-right {
+            width: 52%;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            padding: 18px;
+            background: var(--bg-light);
+            border-radius: 15px;
         }
 
-        .limitation-img {
-            width: 100%;
-            height: auto;
-            border-radius: 6px;
-            border: 1px solid var(--border-color, #e5e7eb);
+        .limitation-right img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 9px;
+        }
+
+        .limitation-figure {
+            display: none;
         }
 
         /* ===========================================
@@ -1511,12 +1526,7 @@
                 </div>
                 <div class="osu-content">
                     <div class="osu-grid">
-                        <!-- Left: Manifold diagram -->
-                        <div class="osu-col-left">
-                            <picture><img src="/academic/images/publications/cvpr2026-osa/fig/osu/fig_osu.png" alt="Stiefel manifold optimization illustration"></picture>
-                        </div>
-
-                        <!-- Center: 4 formulas -->
+                        <!-- Left: 4 formulas -->
                         <div class="osu-col-center">
                             <div class="formula-box">
                                 <span class="katex-display">$$\mathbf{S}_t^{\text{Euc}} = \mathbf{S}_{t-1}\left(\alpha_t (\mathbf{I}_{C_k} - \beta_t \mathbf{k}_t \mathbf{k}_t^\top)\right) + \beta_t \mathbf{v}_t \mathbf{k}_t^\top.$$</span>
@@ -1530,6 +1540,11 @@
                             <div class="formula-box">
                                 <span class="katex-display">$$\mathbf{X}^{(0)} = \frac{\mathbf{S}_t^{\text{Euc}}}{\|\mathbf{S}_t^{\text{Euc}}\|_F + \epsilon}.$$</span>
                             </div>
+                        </div>
+
+                        <!-- Right: Manifold diagram -->
+                        <div class="osu-col-left">
+                            <picture><img src="/academic/images/publications/cvpr2026-osa/fig/osu/fig_osu.png" alt="Stiefel manifold optimization illustration"></picture>
                         </div>
 
                     </div>
@@ -1718,25 +1733,27 @@
                     </div>
                 </div>
                 <div class="limitation-content">
-                    <div class="limitation-item">
-                        <span class="bullet">•</span>
-                        <p><span class="label">Fixed-length:</span> Constrained to fixed-length sequences; continuous videos remain challenging.</p>
+                    <div class="limitation-left">
+                        <div class="limitation-item">
+                            <span class="bullet">•</span>
+                            <p><span class="label">Fixed-length:</span> Constrained to fixed-length sequences.</p>
+                        </div>
+                        <div class="limitation-item">
+                            <span class="bullet">•</span>
+                            <p><span class="label">Online inference:</span> Stable memory propagation is difficult.</p>
+                        </div>
+                        <div class="limitation-item">
+                            <span class="bullet">•</span>
+                            <p><span class="label">Failure cases:</span> May occur in some situations.</p>
+                        </div>
+                        <div class="limitation-item">
+                            <span class="bullet">•</span>
+                            <p><span class="label">Domain shift:</span> May lack robustness to varying equipment.</p>
+                        </div>
                     </div>
-                    <div class="limitation-item">
-                        <span class="bullet">•</span>
-                        <p><span class="label">Online inference:</span> Stable memory propagation in fully online settings is difficult.</p>
+                    <div class="limitation-right">
+                        <picture><img src="/academic/images/publications/cvpr2026-osa/fig/fail/fig_fail.png" alt="Failure cases on CAMUS and EchoNet-Dynamic"></picture>
                     </div>
-                    <div class="limitation-item">
-                        <span class="bullet">•</span>
-                        <p><span class="label">Failure cases:</span> May occur in some situations (Fig. 9), potentially related to initialization.</p>
-                    </div>
-                    <div class="limitation-item">
-                        <span class="bullet">•</span>
-                        <p><span class="label">Domain shift:</span> May lack robustness to varying equipment, probe orientations, image qualities.</p>
-                    </div>
-                </div>
-                <div class="limitation-figure">
-                    <picture><img src="/academic/images/publications/cvpr2026-osa/fig/fail/fig_fail.png" alt="Failure cases on CAMUS and EchoNet-Dynamic" class="limitation-img"></picture>
                 </div>
                 <div class="slide-number">11</div>
             </section>
