@@ -6,6 +6,10 @@ const messages = { en, zh } as const;
 export type Locale = 'en' | 'zh';
 
 export function t(lang: Locale, key: string): string {
+  // Try exact key match first (for flat keys like "slides.title")
+  const exact = (messages[lang] as Record<string, unknown>)[key];
+  if (typeof exact === 'string') return exact;
+
   const keys = key.split('.');
   let value: unknown = messages[lang];
 
