@@ -1,41 +1,41 @@
 ---
 ---
 
-<div class="poster-root">
-  <div class="poster-wrapper" id="posterWrapper">
-    <div class="poster">
+<div class="osa-poster-root">
+  <div class="osa-poster-wrapper" id="posterWrapper">
+    <div class="osa-poster">
       <!-- ==================== HEADER ==================== -->
-      <header class="poster-header">
-        <div class="header-left">
-          <img src="/academic/images/logos/szu.svg" alt="SZU Logo" class="logo-szu">
-          <img src="/academic/images/logos/polyu.svg" alt="PolyU Logo" class="logo-polyu">
+      <header class="osa-poster-header">
+        <div class="osa-poster-header-left">
+          <img src="/academic/images/logos/szu.svg" alt="SZU Logo" class="osa-poster-logo-szu">
+          <img src="/academic/images/logos/polyu.svg" alt="PolyU Logo" class="osa-poster-logo-polyu">
         </div>
-        <div class="header-center">
-          <h1 class="paper-title">
-            <span class="highlight">OSA</span>: Echocardiography Video Segmentation via<br>
+        <div class="osa-poster-header-center">
+          <h1 class="osa-poster-paper-title">
+            <span class="osa-poster-highlight">OSA</span>: Echocardiography Video Segmentation via<br>
             Orthogonalized State Update and Anatomical Prior-aware Feature Enhancement
           </h1>
-          <div class="authors">
+          <div class="osa-poster-authors">
             Rui Wang<sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;Huisi Wu<sup>1*</sup>&nbsp;&nbsp;&nbsp;&nbsp;Jing Qin<sup>2</sup>
           </div>
-          <div class="affiliations">
+          <div class="osa-poster-affiliations">
             <sup>1</sup>College of Computer Science and Software Engineering, Shenzhen University<br>
             <sup>2</sup>Centre for Smart Health, School of Nursing, The Hong Kong Polytechnic University
           </div>
         </div>
-        <div class="header-right">
-          <img src="/academic/images/logos/cvpr2026.png" alt="CVPR 2026" class="logo-cvpr">
+        <div class="osa-poster-header-right">
+          <img src="/academic/images/logos/cvpr2026.png" alt="CVPR 2026" class="osa-poster-logo-cvpr">
         </div>
       </header>
 
       <!-- ==================== CONTENT ==================== -->
-      <main class="poster-content">
+      <main class="osa-poster-content">
         <!-- COLUMN 1: Problem & Motivation -->
-        <div class="column">
-          <div class="column-inner">
-            <div class="section">
-              <h2 class="section-title">Problem Setting</h2>
-              <div class="section-body">
+        <div class="osa-poster-column">
+          <div class="osa-poster-column-inner">
+            <div class="osa-poster-section">
+              <h2 class="osa-poster-section-title">Problem Setting</h2>
+              <div class="osa-poster-section-body">
                 LV segmentation from echocardiography is essential for cardiac function assessment, yet challenging due to:
                 <ul>
                   <li><strong>Severe speckle noise</strong> & low contrast</li>
@@ -43,15 +43,15 @@
                   <li><strong>Sparse annotations</strong> (ED/ES frames only)</li>
                 </ul>
               </div>
-              <div class="figure">
+              <div class="osa-poster-figure">
                 <img src="/academic/images/publications/cvpr2026-osa/fig/challenge/image.png" alt="Challenges" style="width: 80%; margin: 0 auto;">
-                <div class="figure-caption">Figure 1. Challenges: speckle noise, blurred contours, and shape variations.</div>
+                <div class="osa-poster-figure-caption">Figure 1. Challenges: speckle noise, blurred contours, and shape variations.</div>
               </div>
             </div>
 
-            <div class="section">
-              <h2 class="section-title">Motivation</h2>
-              <div class="section-body">
+            <div class="osa-poster-section">
+              <h2 class="osa-poster-section-title">Motivation</h2>
+              <div class="osa-poster-section-body">
                 Existing video segmentation models ignore ultrasound-specific noise statistics, while temporal models suffer from state degradation. OSA addresses both jointly:
                 <ul>
                   <li><strong>Speckle resilience</strong> via physics-driven anatomical decoupling</li>
@@ -61,9 +61,9 @@
               </div>
             </div>
 
-            <div class="section">
-              <h2 class="section-title">Contributions</h2>
-              <div class="section-body">
+            <div class="osa-poster-section">
+              <h2 class="osa-poster-section-title">Contributions</h2>
+              <div class="osa-poster-section-body">
                 <ul>
                   <li>First unified temporal + ultrasound-aware architecture</li>
                   <li>Stiefel constraint prevents rank collapse</li>
@@ -77,33 +77,33 @@
         </div>
 
         <!-- COLUMN 2: Approach & Overview -->
-        <div class="column">
-          <div class="column-inner">
-            <div class="section">
-              <h2 class="section-title">Our Approach</h2>
-              <div class="section-body">
+        <div class="osa-poster-column">
+          <div class="osa-poster-column-inner">
+            <div class="osa-poster-section">
+              <h2 class="osa-poster-section-title">Our Approach</h2>
+              <div class="osa-poster-section-body">
                 We propose <strong style="color: #4655AB;">OSA</strong> — joint temporal stabilization + anatomy-aware enhancement:
                 <ul>
                   <li><strong>OSU:</strong> Stiefel manifold constraint prevents rank collapse</li>
                   <li><strong>APFE:</strong> Physics-driven decoupling separates anatomy from speckle</li>
                 </ul>
               </div>
-              <div class="figure">
+              <div class="osa-poster-figure">
                 <img src="/academic/images/publications/cvpr2026-osa/fig/first/fig_first.png" alt="OSA Teaser" style="width: 80%; margin: 0 auto;">
-                <div class="figure-caption">Figure 2. Paradigm comparison: Memory Bank, LRM, and OSA.</div>
+                <div class="osa-poster-figure-caption">Figure 2. Paradigm comparison: Memory Bank, LRM, and OSA.</div>
               </div>
             </div>
 
-            <div class="section">
-              <h2 class="section-title">Method Overview</h2>
-              <div class="section-body">
+            <div class="osa-poster-section">
+              <h2 class="osa-poster-section-title">Method Overview</h2>
+              <div class="osa-poster-section-body">
                 OSA segments LV using a <strong>ResNet-50</strong> backbone.
               </div>
-              <div class="figure">
+              <div class="osa-poster-figure">
                 <img src="/academic/images/publications/cvpr2026-osa/fig/Met/fig_overview.png" alt="OSA Architecture" >
-                <div class="figure-caption">Figure 3. OSA architecture: APFE → OSU → decoder.</div>
+                <div class="osa-poster-figure-caption">Figure 3. OSA architecture: APFE → OSU → decoder.</div>
               </div>
-              <div class="section-body">
+              <div class="osa-poster-section-body">
                 <strong>Pipeline:</strong>
                 <ol style="padding-left: 0.52in; margin: 0.15in 0;">
                   <li>ResNet-50 extracts features <strong>F</strong><sub>t</sub></li>
@@ -118,71 +118,71 @@
         </div>
 
         <!-- COLUMN 3: Method Details -->
-        <div class="column">
-          <div class="column-inner">
-            <div class="section">
-              <h2 class="section-title">Orthogonalized State Update</h2>
-              <div class="section-body">
+        <div class="osa-poster-column">
+          <div class="osa-poster-column-inner">
+            <div class="osa-poster-section">
+              <h2 class="osa-poster-section-title">Orthogonalized State Update</h2>
+              <div class="osa-poster-section-body">
                 Linear recurrent models suffer <strong>rank collapse</strong>: unconstrained updates decay singular values in <strong>S</strong><sub>t</sub>.
               </div>
-              <div class="formula-box">
-                <div class="formula">
+              <div class="osa-poster-formula-box">
+                <div class="osa-poster-formula">
                   <strong>𝒱</strong><sub>C<sub>v</sub>, C<sub>k</sub></sub> = &#123; <strong>S</strong> &isin; &real;<sup>C<sub>v</sub>&times;C<sub>k</sub></sup> : <strong>S</strong><sup>&top;</sup><strong>S</strong> = <strong>I</strong><sub>C<sub>k</sub></sub> &#125;
                 </div>
-                <div class="formula">
+                <div class="osa-poster-formula">
                   <strong>S</strong><sub>t</sub><sup>Euc</sup> = <strong>S</strong><sub>t&minus;1</sub>(<strong>&alpha;</strong><sub>t</sub>(<strong>I</strong><sub>C<sub>k</sub></sub> &minus; <strong>&beta;</strong><sub>t</sub><strong>k</strong><sub>t</sub><strong>k</strong><sub>t</sub><sup>&top;</sup>)) + <strong>&beta;</strong><sub>t</sub><strong>v</strong><sub>t</sub><strong>k</strong><sub>t</sub><sup>&top;</sup>
                 </div>
-                <div class="formula">
+                <div class="osa-poster-formula">
                   <strong>X</strong><sup>(0)</sup> = <strong>S</strong><sub>t</sub><sup>Euc</sup> / (&par;<strong>S</strong><sub>t</sub><sup>Euc</sup>&par;<sub>F</sub> + &epsilon;)
                 </div>
-                <div class="formula">
+                <div class="osa-poster-formula">
                   <strong>X</strong><sup>(j+1)</sup> = <strong>a</strong><strong>X</strong><sup>(j)</sup> + <strong>b</strong><strong>X</strong><sup>(j)</sup>(<strong>X</strong><sup>(j)</sup>)<sup>&top;</sup><strong>X</strong><sup>(j)</sup> + <strong>c</strong><strong>X</strong><sup>(j)</sup>((<strong>X</strong><sup>(j)</sup>)<sup>&top;</sup><strong>X</strong><sup>(j)</sup>)<sup>2</sup>
                 </div>
               </div>
-              <div class="section-body">
+              <div class="osa-poster-section-body">
                 OSU projects state updates onto the Stiefel manifold, ensuring stable transitions across the cardiac cycle.
               </div>
-              <div class="figure">
+              <div class="osa-poster-figure">
                 <img src="/academic/images/publications/cvpr2026-osa/fig/osu/fig_osu.png" alt="OSU Detail">
-                <div class="figure-caption">Figure 4. OSU: orthogonalized update preserves manifold structure.</div>
+                <div class="osa-poster-figure-caption">Figure 4. OSU: orthogonalized update preserves manifold structure.</div>
               </div>
             </div>
 
-            <div class="section">
-              <h2 class="section-title">Anatomical Prior-aware Feature Enhancement</h2>
-              <div class="section-body">
+            <div class="osa-poster-section">
+              <h2 class="osa-poster-section-title">Anatomical Prior-aware Feature Enhancement</h2>
+              <div class="osa-poster-section-body">
                 APFE decouples anatomy from speckle noise via <strong>physics-driven decomposition</strong>, building stable structural anchors.
               </div>
-              <div class="figure">
+              <div class="osa-poster-figure">
                 <img src="/academic/images/publications/cvpr2026-osa/fig/apfe/fig_apfe.png" alt="APFE Detail">
-                <div class="figure-caption">Figure 5. APFE: contrast decomposition provides noise-resilient cues.</div>
+                <div class="osa-poster-figure-caption">Figure 5. APFE: contrast decomposition provides noise-resilient cues.</div>
               </div>
             </div>
           </div>
         </div>
 
         <!-- COLUMN 4: Contributions & Experiments -->
-        <div class="column">
-          <div class="column-inner">
-            <div class="section">
-              <h2 class="section-title">Quantitative Results</h2>
-              <div class="section-body">
+        <div class="osa-poster-column">
+          <div class="osa-poster-column-inner">
+            <div class="osa-poster-section">
+              <h2 class="osa-poster-section-title">Quantitative Results</h2>
+              <div class="osa-poster-section-body">
                 SOTA on <strong>CAMUS</strong> & <strong>EchoNet-Dynamic</strong> across mDice, mIoU, HD, and ASD.
               </div>
-              <div class="table-wrap">
+              <div class="osa-poster-table-wrap">
                 <img src="/academic/images/publications/cvpr2026-osa/tab/tab_cap.png" alt="Main Results" >
               </div>
-              <div class="figure-caption">Table 1. Segmentation performance on CAMUS and EchoNet-Dynamic.</div>
+              <div class="osa-poster-figure-caption">Table 1. Segmentation performance on CAMUS and EchoNet-Dynamic.</div>
             </div>
 
-            <div class="section">
-              <h2 class="section-title">Qualitative Comparison</h2>
-              <div class="section-body">
+            <div class="osa-poster-section">
+              <h2 class="osa-poster-section-title">Qualitative Comparison</h2>
+              <div class="osa-poster-section-body">
                 OSA shows superior boundary adherence and fewer false positives in speckle-dense regions.
               </div>
-              <div class="figure">
+              <div class="osa-poster-figure">
                 <img src="/academic/images/publications/cvpr2026-osa/fig/Exp/image.png" alt="Qualitative Results" >
-                <div class="figure-caption">Figure 6. Visual comparison. Green = GT, Red = pred, Yellow = overlap.</div>
+                <div class="osa-poster-figure-caption">Figure 6. Visual comparison. Green = GT, Red = pred, Yellow = overlap.</div>
               </div>
             </div>
           </div>
@@ -190,23 +190,23 @@
       </main>
 
       <!-- ==================== FOOTER ==================== -->
-      <footer class="poster-footer">
-        <div class="footer-section">
+      <footer class="osa-poster-footer">
+        <div class="osa-poster-footer-section">
           <h3>Code</h3>
-          <div class="footer-links">
-            <a href="https://github.com/wangrui2025/OSA" class="footer-link" target="_blank">
+          <div class="osa-poster-footer-links">
+            <a href="https://github.com/wangrui2025/OSA" class="osa-poster-footer-link" target="_blank">
               <span>github.com/wangrui2025/OSA</span>
             </a>
           </div>
         </div>
-        <div class="footer-section">
+        <div class="osa-poster-footer-section">
           <h3>CVPR 2026</h3>
           <p>Nashville, Tennessee, USA · June 2026</p>
         </div>
-        <div class="footer-section">
+        <div class="osa-poster-footer-section">
           <h3>Contact</h3>
-          <div class="footer-links">
-            <a href="mailto:hswu@szu.edu.cn" class="footer-link">
+          <div class="osa-poster-footer-links">
+            <a href="mailto:hswu@szu.edu.cn" class="osa-poster-footer-link">
               <span>hswu@szu.edu.cn</span>
             </a>
           </div>
@@ -216,7 +216,7 @@
   </div>
 
   <!-- Preview Controls -->
-  <div class="preview-controls" id="previewControls">
+  <div class="osa-poster-preview-controls" id="previewControls">
     <span>Preview: <span id="zoomLevel">100%</span></span>
     <button onclick="zoomIn()">+</button>
     <button onclick="zoomOut()">&minus;</button>
@@ -235,21 +235,21 @@
   }
 
   @media print {
-    .poster-root {
+    .osa-poster-root {
       width: 84in;
       height: 42in;
       overflow: hidden;
       background: white;
     }
-    .poster-wrapper {
+    .osa-poster-wrapper {
       transform: none !important;
       width: 84in !important;
       height: 42in !important;
     }
-    .poster-header,
-    .poster-footer,
-    .section-title,
-    .highlight {
+    .osa-poster-header,
+    .osa-poster-footer,
+    .osa-poster-section-title,
+    .osa-poster-highlight {
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
     }
@@ -258,13 +258,13 @@
   /* ===========================================
      RESET & BASE
      =========================================== */
-  .poster-root *, .poster-root *::before, .poster-root *::after {
+  .osa-poster-root *, .osa-poster-root *::before, .osa-poster-root *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
 
-  .poster-root {
+  .osa-poster-root {
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -275,7 +275,7 @@
   /* ===========================================
      POSTER CONTAINER
      =========================================== */
-  .poster-wrapper {
+  .osa-poster-wrapper {
     width: 84in;
     height: 42in;
     position: relative;
@@ -284,7 +284,7 @@
     box-shadow: 0 0 50px rgba(0,0,0,0.3);
   }
 
-  .poster {
+  .osa-poster {
     width: 100%;
     height: 100%;
     display: grid;
@@ -298,7 +298,7 @@
   /* ===========================================
      HEADER
      =========================================== */
-  .poster-header {
+  .osa-poster-header {
     grid-area: header;
     background: linear-gradient(135deg, #7F9EE6 0%, #7F9EE6 50%, #7F9EE6 100%);
     color: white;
@@ -311,7 +311,7 @@
     border-bottom: 7.5pt solid #7F9EE6;
   }
 
-  .poster-header::before {
+  .osa-poster-header::before {
     content: '';
     position: absolute;
     top: 0;
@@ -322,20 +322,20 @@
     pointer-events: none;
   }
 
-  .header-left {
+  .osa-poster-header-left {
     display: flex;
     align-items: center;
     gap: 0.6in;
     z-index: 1;
   }
 
-  .logo-szu {
+  .osa-poster-logo-szu {
     width: 3.5in;
     height: auto;
     opacity: 0.95;
   }
 
-  .header-center {
+  .osa-poster-header-center {
     text-align: center;
     flex: 1;
     z-index: 1;
@@ -345,7 +345,7 @@
     justify-content: center;
   }
 
-  .paper-title {
+  .osa-poster-paper-title {
     font-size: 119pt;
     font-weight: bold;
     line-height: 1.1;
@@ -354,24 +354,24 @@
     color: #000000;
   }
 
-  .paper-title .highlight {
+  .osa-poster-paper-title .osa-poster-highlight {
     color: #000000;
   }
 
-  .authors {
+  .osa-poster-authors {
     font-size: 53pt;
     margin-bottom: 0.05in;
     color: #000000;
   }
 
-  .affiliations {
+  .osa-poster-affiliations {
     font-size: 37pt;
     color: #000000;
     line-height: 1.1;
     margin-bottom: 0;
   }
 
-  .header-right {
+  .osa-poster-header-right {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -380,19 +380,19 @@
     min-width: 3.5in;
   }
 
-  .logo-cvpr {
+  .osa-poster-logo-cvpr {
     width: 12in;
     height: auto;
     opacity: 0.95;
   }
 
-  .logo-polyu {
+  .osa-poster-logo-polyu {
     width: 3.5in;
     height: auto;
     opacity: 0.95;
   }
 
-  .conf-info {
+  .osa-poster-conf-info {
     font-size: 44pt;
     color: #000000;
     text-align: center;
@@ -403,7 +403,7 @@
   /* ===========================================
      CONTENT GRID
      =========================================== */
-  .poster-content {
+  .osa-poster-content {
     grid-area: content;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -413,18 +413,18 @@
     overflow: hidden;
   }
 
-  .column {
+  .osa-poster-column {
     padding: 0.2in 0.4in;
     border-right: 2.25pt solid #e8e8e8;
     overflow: hidden;
     min-height: 0;
   }
 
-  .column:last-child {
+  .osa-poster-column:last-child {
     border-right: none;
   }
 
-  .column-inner {
+  .osa-poster-column-inner {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -435,7 +435,7 @@
   /* ===========================================
      SECTIONS
      =========================================== */
-  .section {
+  .osa-poster-section {
     display: flex;
     flex-direction: column;
     gap: 0.12in;
@@ -443,7 +443,7 @@
     min-height: 0;
   }
 
-  .section-title {
+  .osa-poster-section-title {
     font-size: 66pt;
     font-weight: bold;
     color: #5A6FCA;
@@ -453,7 +453,7 @@
     line-height: 1.2;
   }
 
-  .section-subtitle {
+  .osa-poster-section-subtitle {
     font-size: 52pt;
     font-weight: bold;
     color: #4655AB;
@@ -461,31 +461,31 @@
     margin-bottom: 0.08in;
   }
 
-  .section-body {
+  .osa-poster-section-body {
     font-size: 46pt;
     line-height: 1.4;
     color: #1a1a1a;
     text-align: justify;
   }
 
-  .section-body ul {
+  .osa-poster-section-body ul {
     list-style: disc;
     padding-left: 0.4in;
     margin: 0.23in 0;
   }
 
-  .section-body li {
+  .osa-poster-section-body li {
     margin-bottom: 0.12in;
   }
 
-  .section-body strong {
+  .osa-poster-section-body strong {
     color: #4655AB;
   }
 
   /* ===========================================
      FIGURES
      =========================================== */
-  .figure {
+  .osa-poster-figure {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -497,7 +497,7 @@
     border: 2.25pt solid #e0e0e0;
   }
 
-  .figure img {
+  .osa-poster-figure img {
     display: block;
     width: 100%;
     height: auto;
@@ -508,7 +508,7 @@
     margin: 0;
   }
 
-  .figure-caption {
+  .osa-poster-figure-caption {
     font-size: 30pt;
     color: #444;
     text-align: center;
@@ -520,7 +520,7 @@
   /* ===========================================
      FORMULAS
      =========================================== */
-  .formula-box {
+  .osa-poster-formula-box {
     background: #f8f9fa;
     border-left: 4.5pt solid #5A6FCA;
     padding: 0.05in;
@@ -531,7 +531,7 @@
     border-radius: 0 4pt 4pt 0;
   }
 
-  .formula-box .formula {
+  .osa-poster-formula-box .osa-poster-formula {
     font-family: 'Times New Roman', Times, serif;
     font-style: italic;
     text-align: center;
@@ -541,13 +541,13 @@
   /* ===========================================
      TABLES
      =========================================== */
-  .table-wrap {
+  .osa-poster-table-wrap {
     width: 100%;
     overflow: hidden;
     margin: 0.15in 0;
   }
 
-  .table-wrap img {
+  .osa-poster-table-wrap img {
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -556,7 +556,7 @@
   /* ===========================================
      FOOTER
      =========================================== */
-  .poster-footer {
+  .osa-poster-footer {
     grid-area: footer;
     background: #7F9EE6;
     color: white;
@@ -567,7 +567,7 @@
     align-items: start;
   }
 
-  .footer-section h3 {
+  .osa-poster-footer-section h3 {
     font-size: 44pt;
     color: #000000;
     margin-bottom: 0;
@@ -575,8 +575,8 @@
     padding-bottom: 0;
   }
 
-  .footer-section p,
-  .footer-section li {
+  .osa-poster-footer-section p,
+  .osa-poster-footer-section li {
     font-size: 31pt;
     line-height: 1.1;
     color: #000000;
@@ -584,22 +584,22 @@
     margin-bottom: 0;
   }
 
-  .footer-section ul {
+  .osa-poster-footer-section ul {
     list-style: none;
     padding: 0;
   }
 
-  .footer-section li {
+  .osa-poster-footer-section li {
     margin-bottom: 0.06in;
   }
 
-  .footer-links {
+  .osa-poster-footer-links {
     display: flex;
     flex-direction: column;
     gap: 0;
   }
 
-  .footer-link {
+  .osa-poster-footer-link {
     display: flex;
     align-items: center;
     gap: 0.12in;
@@ -608,7 +608,7 @@
     text-decoration: none;
   }
 
-  .qr-placeholder {
+  .osa-poster-qr-placeholder {
     width: 1.8in;
     height: 1.8in;
     background: white;
@@ -623,7 +623,7 @@
   /* ===========================================
      PREVIEW MODE (for screen viewing)
      =========================================== */
-  .preview-controls {
+  .osa-poster-preview-controls {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -639,7 +639,7 @@
     align-items: center;
   }
 
-  .preview-controls button {
+  .osa-poster-preview-controls button {
     background: #7F9EE6;
     border: none;
     color: #F3F7FF;
@@ -650,17 +650,17 @@
     font-size: 20px;
   }
 
-  .preview-controls button:hover {
+  .osa-poster-preview-controls button:hover {
     background: #e5b128;
   }
 
   @media screen {
-    .poster-root {
+    .osa-poster-root {
       min-height: 100vh;
       background: #1a1a2e;
       overflow: auto;
     }
-    .poster-wrapper {
+    .osa-poster-wrapper {
       position: absolute;
       transform-origin: top left;
       transform: scale(0.25);
@@ -725,6 +725,11 @@
   function resetZoom() {
     fitWidth();
   }
+
+  (window as any).zoomIn = zoomIn;
+  (window as any).zoomOut = zoomOut;
+  (window as any).fitToScreen = fitToScreen;
+  (window as any).resetZoom = resetZoom;
 
   window.addEventListener('load', () => { requestAnimationFrame(fitWidth); });
   window.addEventListener('resize', () => { requestAnimationFrame(fitWidth); });
