@@ -7,7 +7,6 @@ let html = fs.readFileSync(path, 'utf8');
 const marker = '<span class="katex-display">';
 let count = 0;
 let pos = 0;
-let clean = true;
 
 while (true) {
   const startIdx = html.indexOf(marker, pos);
