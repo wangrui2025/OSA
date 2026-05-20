@@ -113,7 +113,7 @@ const ogImage = image ?? new URL(`${import.meta.env.BASE_URL}/paper/fig/Met/fig_
 
   <body class="min-h-screen flex flex-col">
     <!-- Top-right controls -->
-    <div class="fixed top-4 right-4 z-50 flex items-center gap-2 bg-surface/80 dark:bg-surface-dark/80 backdrop-blur-sm rounded-lg p-1 border border-border dark:border-border-dark">
+    <div class="fixed top-4 right-4 z-50 flex items-center gap-2 bg-surface/80 dark:bg-surface-dark/80 backdrop-blur-sm rounded-lg p-1 border border-border dark:border-border-dark no-print">
       <ThemeToggle />
       <LangSwitcher currentLang={lang} />
     </div>
@@ -128,3 +128,11 @@ const ogImage = image ?? new URL(`${import.meta.env.BASE_URL}/paper/fig/Met/fig_
     <script src="../../scripts/delegation.ts"></script>
   </body>
 </html>
+
+<style>
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+  }
+</style>
