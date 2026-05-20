@@ -536,6 +536,19 @@
                             </ul>
                         </div>
                     </div>
+
+                    <div class="section">
+                        <h2 class="section-title">Contributions</h2>
+                        <div class="section-body">
+                            <ul>
+                                <li>First unified temporal + ultrasound-aware architecture</li>
+                                <li>Stiefel constraint prevents rank collapse</li>
+                                <li>Physics-driven decoupling for noise resilience</li>
+                                <li><strong>Stiefel manifold:</strong> <strong>S</strong><sub>t</sub> ∈ <strong>V</strong><sub>Cv,Ck</sub> with <strong>S</strong><sup>⊤</sup><strong>S</strong> = <strong>I</strong></li>
+                                <li><strong>Newton-Schulz projection:</strong> avoids exact SVD, O(1) fixed steps</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- COLUMN 2: Method Overview -->
@@ -558,19 +571,6 @@
                                 <li>Query <strong>Q</strong><sub>t</sub> ⊗ <strong>S</strong><sub>t</sub></li>
                                 <li>Decoder outputs mask <strong>M</strong><sub>t</sub></li>
                             </ol>
-                        </div>
-                    </div>
-
-                    <div class="section">
-                        <h2 class="section-title">Contributions</h2>
-                        <div class="section-body">
-                            <ul>
-                                <li>First unified temporal + ultrasound-aware architecture</li>
-                                <li>Stiefel constraint prevents rank collapse</li>
-                                <li>Physics-driven decoupling for noise resilience</li>
-                                <li><strong>Stiefel manifold:</strong> <strong>S</strong><sub>t</sub> ∈ <strong>V</strong><sub>Cv,Ck</sub> with <strong>S</strong><sup>⊤</sup><strong>S</strong> = <strong>I</strong></li>
-                                <li><strong>Newton-Schulz projection:</strong> avoids exact SVD, O(1) fixed steps</li>
-                            </ul>
                         </div>
                     </div>
 
@@ -623,23 +623,9 @@
                             APFE decouples anatomy from speckle noise via <strong>physics-driven decomposition</strong>, building stable structural anchors.
                         </div>
                         <div class="figure">
-                            <img data-im="osa-apfe" alt="APFE Detail" style="max-height: 5.5in;">
+                            <img data-im="osa-apfe" alt="APFE Detail" style="max-height: 4.5in;">
                             <div class="figure-caption">Figure 5. APFE: contrast decomposition provides noise-resilient cues.</div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- COLUMN 4: Experiments -->
-                <div class="column">
-                    <div class="section">
-                        <h2 class="section-title">Quantitative Results</h2>
-                        <div class="section-body">
-                            SOTA on <strong>CAMUS</strong> & <strong>EchoNet-Dynamic</strong> across mDice, mIoU, HD, and ASD.
-                        </div>
-                        <div class="table-wrap">
-                            <img data-im="osa-tab-capability" alt="Main Results" style="max-height: 6in;">
-                        </div>
-                        <div class="figure-caption">Table 1. Segmentation performance on CAMUS and EchoNet-Dynamic.</div>
                     </div>
 
                     <div class="section">
@@ -661,6 +647,20 @@
                             Clinical metrics: LVEF via Simpson's rule, Pearson <strong>r</strong>, bias±std.
                         </div>
                     </div>
+                </div>
+
+                <!-- COLUMN 4: Experiments -->
+                <div class="column">
+                    <div class="section">
+                        <h2 class="section-title">Quantitative Results</h2>
+                        <div class="section-body">
+                            SOTA on <strong>CAMUS</strong> & <strong>EchoNet-Dynamic</strong> across mDice, mIoU, HD, and ASD.
+                        </div>
+                        <div class="table-wrap">
+                            <img data-im="osa-tab-capability" alt="Main Results" style="max-height: 6in;">
+                        </div>
+                        <div class="figure-caption">Table 1. Segmentation performance on CAMUS and EchoNet-Dynamic.</div>
+                    </div>
 
                     <div class="section">
                         <h2 class="section-title">Qualitative Comparison</h2>
@@ -668,7 +668,7 @@
                             OSA shows superior boundary adherence and fewer false positives in speckle-dense regions.
                         </div>
                         <div class="figure">
-                            <img data-im="osa-exp" alt="Qualitative Results" style="max-height: 5.3in;">
+                            <img data-im="osa-exp" alt="Qualitative Results" style="max-height: 5.5in;">
                             <div class="figure-caption">Figure 6. Visual comparison. Green = GT, Red = pred, Yellow = overlap.</div>
                         </div>
                     </div>
