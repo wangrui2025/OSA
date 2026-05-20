@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Poster from '../../components/Poster.astro';
 import { t } from '../../i18n/index.ts';
 
 export function getStaticPaths() {
@@ -11,10 +12,5 @@ const title = 'osa poster';
 const description = t(lang, 'poster.description');
 ---
 <Layout title={title} description={description} lang={lang} showFooter={false}>
-  <iframe
-    src={`${import.meta.env.BASE_URL}/poster.html`}
-    class="w-full h-screen border-0"
-    title="OSA Poster"
-    loading="lazy"
-  ></iframe>
+  <Poster />
 </Layout>
