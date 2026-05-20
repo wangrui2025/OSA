@@ -32,154 +32,160 @@
       <main class="poster-content">
         <!-- COLUMN 1: Problem & Motivation -->
         <div class="column">
-          <div class="section">
-            <h2 class="section-title">Problem Setting</h2>
-            <div class="section-body">
-              LV segmentation from echocardiography is essential for cardiac function assessment, yet challenging due to:
-              <ul>
-                <li><strong>Severe speckle noise</strong> & low contrast</li>
-                <li><strong>Rapid non-rigid deformation</strong> (systole ↔ diastole)</li>
-                <li><strong>Sparse annotations</strong> (ED/ES frames only)</li>
-              </ul>
+          <div class="column-inner">
+            <div class="section">
+              <h2 class="section-title">Problem Setting</h2>
+              <div class="section-body">
+                LV segmentation from echocardiography is essential for cardiac function assessment, yet challenging due to:
+                <ul>
+                  <li><strong>Severe speckle noise</strong> & low contrast</li>
+                  <li><strong>Rapid non-rigid deformation</strong> (systole ↔ diastole)</li>
+                  <li><strong>Sparse annotations</strong> (ED/ES frames only)</li>
+                </ul>
+              </div>
+              <div class="figure">
+                <img src="/academic/images/publications/cvpr2026-osa/fig/challenge/image.png" alt="Challenges" style="width: 80%; margin: 0 auto;">
+                <div class="figure-caption">Figure 1. Challenges: speckle noise, blurred contours, and shape variations.</div>
+              </div>
             </div>
-            <div class="figure">
-              <img src="/academic/images/publications/cvpr2026-osa/fig/challenge/image.png" alt="Challenges" style="width: 80%; margin: 0 auto;">
-              <div class="figure-caption">Figure 1. Challenges: speckle noise, blurred contours, and shape variations.</div>
-            </div>
-          </div>
 
-          <div class="section">
-            <h2 class="section-title">Our Approach</h2>
-            <div class="section-body">
-              We propose <strong style="color: #4655AB;">OSA</strong> — joint temporal stabilization + anatomy-aware enhancement:
-              <ul>
-                <li><strong>OSU:</strong> Stiefel manifold constraint prevents rank collapse</li>
-                <li><strong>APFE:</strong> Physics-driven decoupling separates anatomy from speckle</li>
-              </ul>
+            <div class="section">
+              <h2 class="section-title">Motivation</h2>
+              <div class="section-body">
+                Existing video segmentation models ignore ultrasound-specific noise statistics, while temporal models suffer from state degradation. OSA addresses both jointly:
+                <ul>
+                  <li><strong>Speckle resilience</strong> via physics-driven anatomical decoupling</li>
+                  <li><strong>Temporal stability</strong> via orthogonalized state updates</li>
+                  <li><strong>Sparse annotation</strong> handled by ED/ES frame supervision</li>
+                </ul>
+              </div>
             </div>
-            <div class="figure">
-              <img src="/academic/images/publications/cvpr2026-osa/fig/first/fig_first.png" alt="OSA Teaser" style="width: 80%; margin: 0 auto;">
-              <div class="figure-caption">Figure 2. Paradigm comparison: Memory Bank, LRM, and OSA.</div>
-            </div>
-          </div>
 
-          <div class="section">
-            <h2 class="section-title">Motivation</h2>
-            <div class="section-body">
-              Existing video segmentation models ignore ultrasound-specific noise statistics, while temporal models suffer from state degradation. OSA addresses both jointly:
-              <ul>
-                <li><strong>Speckle resilience</strong> via physics-driven anatomical decoupling</li>
-                <li><strong>Temporal stability</strong> via orthogonalized state updates</li>
-                <li><strong>Sparse annotation</strong> handled by ED/ES frame supervision</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="section">
-            <h2 class="section-title">Contributions</h2>
-            <div class="section-body">
-              <ul>
-                <li>First unified temporal + ultrasound-aware architecture</li>
-                <li>Stiefel constraint prevents rank collapse</li>
-                <li>Physics-driven decoupling for noise resilience</li>
-                <li><strong>Stiefel manifold:</strong> <strong>S</strong><sub>t</sub> ∈ <strong>V</strong><sub>Cv,Ck</sub> with <strong>S</strong><sup>⊤</sup><strong>S</strong> = <strong>I</strong></li>
-                <li><strong>Newton-Schulz projection:</strong> avoids exact SVD, O(1) fixed steps</li>
-              </ul>
+            <div class="section">
+              <h2 class="section-title">Contributions</h2>
+              <div class="section-body">
+                <ul>
+                  <li>First unified temporal + ultrasound-aware architecture</li>
+                  <li>Stiefel constraint prevents rank collapse</li>
+                  <li>Physics-driven decoupling for noise resilience</li>
+                  <li><strong>Stiefel manifold:</strong> <strong>S</strong><sub>t</sub> ∈ <strong>V</strong><sub>Cv,Ck</sub> with <strong>S</strong><sup>⊤</sup><strong>S</strong> = <strong>I</strong></li>
+                  <li><strong>Newton-Schulz projection:</strong> avoids exact SVD, O(1) fixed steps</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- COLUMN 2: Method Overview -->
+        <!-- COLUMN 2: Approach & Overview -->
         <div class="column">
-          <div class="section">
-            <h2 class="section-title">Method Overview</h2>
-            <div class="section-body">
-              OSA segments LV using a <strong>ResNet-50</strong> backbone.
+          <div class="column-inner">
+            <div class="section">
+              <h2 class="section-title">Our Approach</h2>
+              <div class="section-body">
+                We propose <strong style="color: #4655AB;">OSA</strong> — joint temporal stabilization + anatomy-aware enhancement:
+                <ul>
+                  <li><strong>OSU:</strong> Stiefel manifold constraint prevents rank collapse</li>
+                  <li><strong>APFE:</strong> Physics-driven decoupling separates anatomy from speckle</li>
+                </ul>
+              </div>
+              <div class="figure">
+                <img src="/academic/images/publications/cvpr2026-osa/fig/first/fig_first.png" alt="OSA Teaser" style="width: 80%; margin: 0 auto;">
+                <div class="figure-caption">Figure 2. Paradigm comparison: Memory Bank, LRM, and OSA.</div>
+              </div>
             </div>
-            <div class="figure">
-              <img src="/academic/images/publications/cvpr2026-osa/fig/Met/fig_overview.png" alt="OSA Architecture" >
-              <div class="figure-caption">Figure 3. OSA architecture: APFE → OSU → decoder.</div>
-            </div>
-            <div class="section-body">
-              <strong>Pipeline:</strong>
-              <ol style="padding-left: 0.52in; margin: 0.15in 0;">
-                <li>ResNet-50 extracts features <strong>F</strong><sub>t</sub></li>
-                <li>APFE decomposes into keys/values</li>
-                <li>OSU maintains state <strong>S</strong><sub>t</sub> on Stiefel manifold</li>
-                <li>Query <strong>Q</strong><sub>t</sub> ⊗ <strong>S</strong><sub>t</sub></li>
-                <li>Decoder outputs mask <strong>M</strong><sub>t</sub></li>
-              </ol>
+
+            <div class="section">
+              <h2 class="section-title">Method Overview</h2>
+              <div class="section-body">
+                OSA segments LV using a <strong>ResNet-50</strong> backbone.
+              </div>
+              <div class="figure">
+                <img src="/academic/images/publications/cvpr2026-osa/fig/Met/fig_overview.png" alt="OSA Architecture" >
+                <div class="figure-caption">Figure 3. OSA architecture: APFE → OSU → decoder.</div>
+              </div>
+              <div class="section-body">
+                <strong>Pipeline:</strong>
+                <ol style="padding-left: 0.52in; margin: 0.15in 0;">
+                  <li>ResNet-50 extracts features <strong>F</strong><sub>t</sub></li>
+                  <li>APFE decomposes into keys/values</li>
+                  <li>OSU maintains state <strong>S</strong><sub>t</sub> on Stiefel manifold</li>
+                  <li>Query <strong>Q</strong><sub>t</sub> ⊗ <strong>S</strong><sub>t</sub></li>
+                  <li>Decoder outputs mask <strong>M</strong><sub>t</sub></li>
+                </ol>
+              </div>
             </div>
           </div>
-
         </div>
 
         <!-- COLUMN 3: Method Details -->
         <div class="column">
-          <div class="section">
-            <h2 class="section-title">Orthogonalized State Update</h2>
-            <div class="section-body">
-              Linear recurrent models suffer <strong>rank collapse</strong>: unconstrained updates decay singular values in <strong>S</strong><sub>t</sub>.
-            </div>
-            <div class="formula-box">
-              <div class="formula">
-                <strong>𝒱</strong><sub>C<sub>v</sub>, C<sub>k</sub></sub> = &#123; <strong>S</strong> &isin; &real;<sup>C<sub>v</sub>&times;C<sub>k</sub></sup> : <strong>S</strong><sup>&top;</sup><strong>S</strong> = <strong>I</strong><sub>C<sub>k</sub></sub> &#125;
+          <div class="column-inner">
+            <div class="section">
+              <h2 class="section-title">Orthogonalized State Update</h2>
+              <div class="section-body">
+                Linear recurrent models suffer <strong>rank collapse</strong>: unconstrained updates decay singular values in <strong>S</strong><sub>t</sub>.
               </div>
-              <div class="formula">
-                <strong>S</strong><sub>t</sub><sup>Euc</sup> = <strong>S</strong><sub>t&minus;1</sub>(<strong>&alpha;</strong><sub>t</sub>(<strong>I</strong><sub>C<sub>k</sub></sub> &minus; <strong>&beta;</strong><sub>t</sub><strong>k</strong><sub>t</sub><strong>k</strong><sub>t</sub><sup>&top;</sup>)) + <strong>&beta;</strong><sub>t</sub><strong>v</strong><sub>t</sub><strong>k</strong><sub>t</sub><sup>&top;</sup>
+              <div class="formula-box">
+                <div class="formula">
+                  <strong>𝒱</strong><sub>C<sub>v</sub>, C<sub>k</sub></sub> = &#123; <strong>S</strong> &isin; &real;<sup>C<sub>v</sub>&times;C<sub>k</sub></sup> : <strong>S</strong><sup>&top;</sup><strong>S</strong> = <strong>I</strong><sub>C<sub>k</sub></sub> &#125;
+                </div>
+                <div class="formula">
+                  <strong>S</strong><sub>t</sub><sup>Euc</sup> = <strong>S</strong><sub>t&minus;1</sub>(<strong>&alpha;</strong><sub>t</sub>(<strong>I</strong><sub>C<sub>k</sub></sub> &minus; <strong>&beta;</strong><sub>t</sub><strong>k</strong><sub>t</sub><strong>k</strong><sub>t</sub><sup>&top;</sup>)) + <strong>&beta;</strong><sub>t</sub><strong>v</strong><sub>t</sub><strong>k</strong><sub>t</sub><sup>&top;</sup>
+                </div>
+                <div class="formula">
+                  <strong>X</strong><sup>(0)</sup> = <strong>S</strong><sub>t</sub><sup>Euc</sup> / (&par;<strong>S</strong><sub>t</sub><sup>Euc</sup>&par;<sub>F</sub> + &epsilon;)
+                </div>
+                <div class="formula">
+                  <strong>X</strong><sup>(j+1)</sup> = <strong>a</strong><strong>X</strong><sup>(j)</sup> + <strong>b</strong><strong>X</strong><sup>(j)</sup>(<strong>X</strong><sup>(j)</sup>)<sup>&top;</sup><strong>X</strong><sup>(j)</sup> + <strong>c</strong><strong>X</strong><sup>(j)</sup>((<strong>X</strong><sup>(j)</sup>)<sup>&top;</sup><strong>X</strong><sup>(j)</sup>)<sup>2</sup>
+                </div>
               </div>
-              <div class="formula">
-                <strong>X</strong><sup>(0)</sup> = <strong>S</strong><sub>t</sub><sup>Euc</sup> / (&par;<strong>S</strong><sub>t</sub><sup>Euc</sup>&par;<sub>F</sub> + &epsilon;)
+              <div class="section-body">
+                OSU projects state updates onto the Stiefel manifold, ensuring stable transitions across the cardiac cycle.
               </div>
-              <div class="formula">
-                <strong>X</strong><sup>(j+1)</sup> = <strong>a</strong><strong>X</strong><sup>(j)</sup> + <strong>b</strong><strong>X</strong><sup>(j)</sup>(<strong>X</strong><sup>(j)</sup>)<sup>&top;</sup><strong>X</strong><sup>(j)</sup> + <strong>c</strong><strong>X</strong><sup>(j)</sup>((<strong>X</strong><sup>(j)</sup>)<sup>&top;</sup><strong>X</strong><sup>(j)</sup>)<sup>2</sup>
+              <div class="figure">
+                <img src="/academic/images/publications/cvpr2026-osa/fig/osu/fig_osu.png" alt="OSU Detail">
+                <div class="figure-caption">Figure 4. OSU: orthogonalized update preserves manifold structure.</div>
               </div>
             </div>
-            <div class="section-body">
-              OSU projects state updates onto the Stiefel manifold, ensuring stable transitions across the cardiac cycle.
-            </div>
-            <div class="figure">
-              <img src="/academic/images/publications/cvpr2026-osa/fig/osu/fig_osu.png" alt="OSU Detail">
-              <div class="figure-caption">Figure 4. OSU: orthogonalized update preserves manifold structure.</div>
-            </div>
-          </div>
 
-          <div class="section">
-            <h2 class="section-title">Anatomical Prior-aware Feature Enhancement</h2>
-            <div class="section-body">
-              APFE decouples anatomy from speckle noise via <strong>physics-driven decomposition</strong>, building stable structural anchors.
-            </div>
-            <div class="figure">
-              <img src="/academic/images/publications/cvpr2026-osa/fig/apfe/fig_apfe.png" alt="APFE Detail">
-              <div class="figure-caption">Figure 5. APFE: contrast decomposition provides noise-resilient cues.</div>
+            <div class="section">
+              <h2 class="section-title">Anatomical Prior-aware Feature Enhancement</h2>
+              <div class="section-body">
+                APFE decouples anatomy from speckle noise via <strong>physics-driven decomposition</strong>, building stable structural anchors.
+              </div>
+              <div class="figure">
+                <img src="/academic/images/publications/cvpr2026-osa/fig/apfe/fig_apfe.png" alt="APFE Detail">
+                <div class="figure-caption">Figure 5. APFE: contrast decomposition provides noise-resilient cues.</div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- COLUMN 4: Experiments -->
+        <!-- COLUMN 4: Contributions & Experiments -->
         <div class="column">
-          <div class="section">
-            <h2 class="section-title">Quantitative Results</h2>
-            <div class="section-body">
-              SOTA on <strong>CAMUS</strong> & <strong>EchoNet-Dynamic</strong> across mDice, mIoU, HD, and ASD.
+          <div class="column-inner">
+            <div class="section">
+              <h2 class="section-title">Quantitative Results</h2>
+              <div class="section-body">
+                SOTA on <strong>CAMUS</strong> & <strong>EchoNet-Dynamic</strong> across mDice, mIoU, HD, and ASD.
+              </div>
+              <div class="table-wrap">
+                <img src="/academic/images/publications/cvpr2026-osa/tab/tab_cap.png" alt="Main Results" >
+              </div>
+              <div class="figure-caption">Table 1. Segmentation performance on CAMUS and EchoNet-Dynamic.</div>
             </div>
-            <div class="table-wrap">
-              <img src="/academic/images/publications/cvpr2026-osa/tab/tab_cap.png" alt="Main Results" >
-            </div>
-            <div class="figure-caption">Table 1. Segmentation performance on CAMUS and EchoNet-Dynamic.</div>
-          </div>
 
-          <div class="section">
-            <h2 class="section-title">Qualitative Comparison</h2>
-            <div class="section-body">
-              OSA shows superior boundary adherence and fewer false positives in speckle-dense regions.
-            </div>
-            <div class="figure">
-              <img src="/academic/images/publications/cvpr2026-osa/fig/Exp/image.png" alt="Qualitative Results" >
-              <div class="figure-caption">Figure 6. Visual comparison. Green = GT, Red = pred, Yellow = overlap.</div>
+            <div class="section">
+              <h2 class="section-title">Qualitative Comparison</h2>
+              <div class="section-body">
+                OSA shows superior boundary adherence and fewer false positives in speckle-dense regions.
+              </div>
+              <div class="figure">
+                <img src="/academic/images/publications/cvpr2026-osa/fig/Exp/image.png" alt="Qualitative Results" >
+                <div class="figure-caption">Figure 6. Visual comparison. Green = GT, Red = pred, Yellow = overlap.</div>
+              </div>
             </div>
           </div>
-
         </div>
       </main>
 
@@ -282,7 +288,7 @@
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-rows: 8in 1fr 2.0in;
+    grid-template-rows: 8in minmax(0, 1fr) 2.0in;
     grid-template-areas:
       "header"
       "content"
@@ -409,16 +415,21 @@
 
   .column {
     padding: 0.2in 0.4in;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    gap: 0.4in;
     border-right: 2.25pt solid #e8e8e8;
     overflow: hidden;
+    min-height: 0;
   }
 
   .column:last-child {
     border-right: none;
+  }
+
+  .column-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 0.4in;
+    overflow: hidden;
   }
 
   /* ===========================================
@@ -485,10 +496,14 @@
   }
 
   .figure img {
+    display: block;
     width: 100%;
     height: auto;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
     border-radius: 6pt;
+    margin: 0;
   }
 
   .figure-caption {
